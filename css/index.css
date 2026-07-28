@@ -121,12 +121,13 @@
 
     .hero-meta-date {
       font-family: var(--font-display);
-      font-size: 28px;
+      font-size: clamp(36px, 4vw, 52px);
       letter-spacing: 0.05em;
+      line-height: 1;
     }
 
     .hero-meta-location {
-      font-size: 12px;
+      font-size: 14px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gray-light);

@@ -1,112 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Un-rushed — TEDxUniversityofPiraeus 2026</title>
-  <meta name="description" content="Un-rushed — the 2026 theme of TEDxUniversityofPiraeus. A manifesto for slowing down, thinking deeper, and living with intention.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Hero */
-    .ur-hero {
-      min-height: 100vh; display: flex; align-items: flex-end;
-      padding-top: var(--nav-height); padding-bottom: 80px;
-      position: relative; overflow: hidden; background: var(--red);
-    }
-    .ur-hero-bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 100% 80% at 50% 50%, rgba(0,0,0,0.3) 0%, transparent 70%),
-        linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(230,43,30,1) 60%);
-    }
-    .ur-hero-word {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      font-family: var(--font-display); font-size: clamp(120px, 22vw, 340px);
-      color: rgba(0,0,0,0.15); text-transform: uppercase; white-space: nowrap;
-      pointer-events: none; line-height: 1; animation: breathe 6s ease-in-out infinite;
-    }
-    .ur-hero-content { position: relative; z-index: 1; }
-    .ur-hero-label { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
-    .ur-hero-title { font-family: var(--font-display); font-size: clamp(80px, 18vw, 280px); line-height: 0.85; color: var(--white); margin-bottom: 48px; }
-    .ur-hero-intro { max-width: 600px; font-size: clamp(16px, 1.5vw, 22px); line-height: 1.7; color: rgba(255,255,255,0.85); }
-
-    /* Manifesto */
-    .manifesto-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 80px; }
-    .manifesto-quote {
-      position: relative; padding: 40px 48px; border: 1px solid var(--gray-line);
-      font-family: var(--font-serif); font-style: italic;
-      font-size: clamp(22px, 3vw, 40px); line-height: 1.4; color: var(--white);
-    }
-    .manifesto-quote::before {
-      content: '\201C'; position: absolute; top: -20px; left: 40px;
-      font-family: var(--font-serif); font-size: 80px; color: var(--red); line-height: 1;
-    }
-    .manifesto-text { display: flex; flex-direction: column; gap: 48px; }
-    .manifesto-text p {
-      font-size: clamp(16px, 1.5vw, 22px); line-height: 1.8;
-      color: rgba(255,255,255,0.75); max-width: 800px;
-    }
-    .manifesto-text p strong { color: var(--white); }
-
-    /* Statements */
-    .statements { background: var(--gray); }
-    .statements-list { margin-top: 60px; display: flex; flex-direction: column; }
-    .statement-item {
-      display: grid; grid-template-columns: 80px 1fr; gap: 40px;
-      padding: 48px 0; border-bottom: 1px solid var(--gray-line); align-items: start;
-    }
-    .statement-item:last-child { border-bottom: none; }
-    .statement-num { font-family: var(--font-display); font-size: 56px; color: var(--red); line-height: 1; }
-    .statement-content h3 { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 36px); line-height: 1.2; margin-bottom: 16px; }
-    .statement-content p { font-size: clamp(14px, 1.2vw, 17px); line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 600px; }
-
-    /* Visual story */
-    .vs-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-line); margin-top: 60px; }
-    .vs-block {
-      background: var(--black); padding: 80px 60px; min-height: 360px;
-      display: flex; flex-direction: column; justify-content: space-between;
-      position: relative; overflow: hidden;
-    }
-    .vs-block-red   { background: var(--red); }
-    .vs-block-white { background: var(--white); color: var(--black); }
-    .vs-block-num {
-      position: absolute; top: 16px; right: 16px;
-      font-family: var(--font-display); font-size: 120px;
-      color: rgba(255,255,255,0.06); line-height: 1;
-    }
-    .vs-block-red .vs-block-num,
-    .vs-block-white .vs-block-num { color: rgba(0,0,0,0.08); }
-    .vs-block-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
-    .vs-block-red .vs-block-label   { color: rgba(255,255,255,0.6); }
-    .vs-block-white .vs-block-label { color: rgba(0,0,0,0.5); }
-    .vs-block-text {
-      font-family: var(--font-display); font-size: clamp(40px, 6vw, 80px);
-      line-height: 0.9; text-transform: uppercase; position: relative; z-index: 1;
-    }
-    .vs-block-white .vs-block-text { color: var(--black); }
-    .vs-block-sub { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.6); position: relative; z-index: 1; max-width: 280px; }
-    .vs-block-red .vs-block-sub   { color: rgba(255,255,255,0.8); }
-    .vs-block-white .vs-block-sub { color: rgba(0,0,0,0.6); }
-
-    /* CTA */
-    .ur-cta { text-align: center; }
-    .ur-cta h2 { font-family: var(--font-display); font-size: clamp(48px, 10vw, 140px); line-height: 0.9; margin-bottom: 40px; }
-
-    @media (max-width: 768px) {
-      .manifesto-header { grid-template-columns: 1fr; gap: 48px; }
-      .statement-item { grid-template-columns: 56px 1fr; gap: 24px; }
-      .vs-blocks { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/unrushed.css">
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<!-- HERO -->
-<header class="ur-hero">
+<!-- ── HERO ── -->
+<section class="ur-hero">
   <div class="ur-hero-bg"></div>
   <div class="ur-hero-word">UN-RUSHED</div>
+
   <div class="container ur-hero-content">
     <div class="ur-hero-label anim-fade-up">TEDxUniversityofPiraeus · 2026 Theme</div>
     <div class="ur-hero-title anim-fade-up anim-delay-2">Un-<br>rushed</div>
@@ -114,36 +23,45 @@
       The theme that defines our 2026 event. A radical act of resistance in an age of infinite speed.
     </p>
   </div>
-</header>
+</section>
 
-<!-- MANIFESTO -->
-<section class="section section--line">
+<!-- ── MANIFESTO ── -->
+<section class="manifesto section">
   <div class="container">
     <div class="manifesto-header">
       <div class="reveal">
         <span class="t-label">The Manifesto</span>
-        <h2 class="t-heading" style="margin-top:16px;">What Does It Mean To Be <span class="text-red">Un-rushed</span>?</h2>
+        <h2 class="t-heading" style="margin-top:16px;">What Does It Mean To Be <span style="color:var(--red);">Un-rushed</span>?</h2>
       </div>
       <div class="reveal">
-        <div class="manifesto-quote">In a world built for speed, choosing slowness is a radical act. Un-rushed is not about being slow — it's about being deliberate.</div>
+        <div class="manifesto-quote">
+          In a world built for speed, choosing slowness is a radical act. Un-rushed is not about being slow — it's about being deliberate.
+        </div>
       </div>
     </div>
 
     <div class="manifesto-text">
-      <p class="reveal">We live in a culture of perpetual acceleration. Faster deliveries, faster decisions, faster content. We scroll before we think. We speak before we listen. We move before we know where we're going.</p>
-      <p class="reveal"><strong>Un-rushed</strong> is an invitation to pause. Not forever — just long enough to ask: what are we rushing toward? What are we leaving behind? What wisdom do we lose when we never slow down to find it?</p>
-      <p class="reveal">This TEDx is a space for thinkers, makers, and dreamers who dare to take their time. Who know that the best ideas don't come on demand. That depth requires patience. That presence is a form of power.</p>
+      <p class="reveal" style="font-size:clamp(16px,1.5vw,22px);line-height:1.8;color:rgba(255,255,255,0.75);max-width:800px;">
+        We live in a culture of perpetual acceleration. Faster deliveries, faster decisions, faster content. We scroll before we think. We speak before we listen. We move before we know where we're going.
+      </p>
+      <p class="reveal" style="font-size:clamp(16px,1.5vw,22px);line-height:1.8;color:rgba(255,255,255,0.75);max-width:800px;">
+        <strong style="color:var(--white);">Un-rushed</strong> is an invitation to pause. Not forever — just long enough to ask: what are we rushing toward? What are we leaving behind? What wisdom do we lose when we never slow down to find it?
+      </p>
+      <p class="reveal" style="font-size:clamp(16px,1.5vw,22px);line-height:1.8;color:rgba(255,255,255,0.75);max-width:800px;">
+        This TEDx is a space for thinkers, makers, and dreamers who dare to take their time. Who know that the best ideas don't come on demand. That depth requires patience. That presence is a form of power.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- STATEMENTS -->
-<section class="section section--line statements">
+<!-- ── STATEMENTS ── -->
+<section class="statements section">
   <div class="container">
     <div class="reveal">
       <span class="t-label">Core Ideas</span>
-      <h2 class="t-heading" style="margin-top:12px;">The Un-rushed <span class="text-red">Principles</span></h2>
+      <h2 class="t-heading" style="margin-top:12px;">The Un-rushed <span style="color:var(--red);">Principles</span></h2>
     </div>
+
     <div class="statements-list stagger-group">
       <div class="statement-item reveal">
         <div class="statement-num">01</div>
@@ -152,13 +70,15 @@
           <p>The most important ideas in history weren't rushed. Darwin spent 20 years refining his theory of evolution. Einstein daydreamed his way to relativity. When we give ideas room to breathe, they become something extraordinary.</p>
         </div>
       </div>
+
       <div class="statement-item reveal">
         <div class="statement-num">02</div>
         <div class="statement-content">
           <h3>Presence is a Competitive Advantage</h3>
-          <p>In a world of distraction, full attention is rare. The ability to be fully present — to listen without half-composing your reply — is increasingly the most valuable human skill.</p>
+          <p>In a world of distraction, full attention is rare. The ability to be fully present — to listen without half-composing your reply — is increasingly becoming the most valuable human skill.</p>
         </div>
       </div>
+
       <div class="statement-item reveal">
         <div class="statement-num">03</div>
         <div class="statement-content">
@@ -166,45 +86,50 @@
           <p>Most things that feel urgent aren't. Most things that matter don't feel urgent at all. Learning to distinguish between the two is a form of wisdom that no algorithm can teach.</p>
         </div>
       </div>
+
       <div class="statement-item reveal">
         <div class="statement-num">04</div>
         <div class="statement-content">
           <h3>Rest is Not the Opposite of Work</h3>
-          <p>Rest is where ideas connect — where the unconscious mind does its best work. The cultures and individuals that embrace rest aren't falling behind; they're building the reserves to lead.</p>
+          <p>Rest is where ideas connect. Where the unconscious mind does its best work. The cultures and individuals that embrace rest aren't falling behind — they're building the reserves to lead.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VISUAL STORY -->
-<section class="section section--line">
+<!-- ── VISUAL STORY ── -->
+<section class="visual-story section">
   <div class="container">
     <div class="reveal">
       <span class="t-label">The Contrast</span>
-      <h2 class="t-heading" style="margin-top:12px;">Rushed vs <span class="text-red">Un-rushed</span></h2>
+      <h2 class="t-heading" style="margin-top:12px;">Rushed vs <span style="color:var(--red);">Un-rushed</span></h2>
     </div>
+
     <div class="vs-blocks reveal">
       <div class="vs-block">
-        <div class="vs-block-num">&times;</div>
+        <div class="vs-block-num">×</div>
         <div class="vs-block-label">The Old Way</div>
         <div class="vs-block-text">Always<br>On</div>
         <div class="vs-block-sub">Reactive, scattered, exhausted. Always moving, never arriving. Loud, busy, numb.</div>
       </div>
+
       <div class="vs-block vs-block-red">
-        <div class="vs-block-num">&check;</div>
+        <div class="vs-block-num">✓</div>
         <div class="vs-block-label">The Un-rushed Way</div>
         <div class="vs-block-text">Fully<br>Present</div>
         <div class="vs-block-sub">Intentional, focused, energized. Moving with purpose. Quiet, clear, alive.</div>
       </div>
+
       <div class="vs-block vs-block-white">
-        <div class="vs-block-num">&times;</div>
+        <div class="vs-block-num">×</div>
         <div class="vs-block-label">The Cost of Speed</div>
         <div class="vs-block-text">Surface<br>Level</div>
         <div class="vs-block-sub">Quick opinions, shallow connections, forgettable work. Optimized for speed, not meaning.</div>
       </div>
+
       <div class="vs-block">
-        <div class="vs-block-num">&check;</div>
+        <div class="vs-block-num">✓</div>
         <div class="vs-block-label">The Reward of Slowness</div>
         <div class="vs-block-text">Going<br>Deeper</div>
         <div class="vs-block-sub">Nuance, craft, real understanding. Work that lasts. Ideas that change things.</div>
@@ -213,11 +138,11 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section ur-cta">
+<!-- ── CTA ── -->
+<section class="ur-cta section">
   <div class="container">
     <div class="reveal">
-      <h2>Are You<br><span class="text-red">Ready?</span></h2>
+      <h2>Are You<br><span style="color:var(--red);">Ready?</span></h2>
       <p class="t-subheading" style="color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 40px;">
         Join us for a day of ideas that ask you to slow down, look closer, and think deeper.
       </p>
@@ -229,7 +154,6 @@
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
     <span class="ticker-item">Un-rushed<span class="ticker-dot"></span></span>

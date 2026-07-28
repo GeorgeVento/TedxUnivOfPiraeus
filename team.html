@@ -1,98 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team — TEDxUniversityofPiraeus 2026</title>
-  <meta name="description" content="Meet the team behind TEDxUniversityofPiraeus 2026 — the students and professionals organizing our 'Un-rushed' event.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .team-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .team-intro-right p { font-size: clamp(15px, 1.3vw, 18px); line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
-
-    .team-department { margin-bottom: 80px; }
-    .team-department:last-child { margin-bottom: 0; }
-    .dept-header {
-      display: flex; align-items: center; gap: 24px; margin-bottom: 40px;
-      padding-bottom: 20px; border-bottom: 1px solid var(--gray-line);
-    }
-    .dept-number { font-family: var(--font-display); font-size: 48px; color: var(--red); line-height: 1; }
-    .dept-name { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .dept-count { margin-left: auto; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
-
-    .members-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .member-card {
-      position: relative; border: 1px solid var(--gray-line); overflow: hidden;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .member-card:hover { border-color: var(--red); transform: translateY(-4px); }
-    .member-avatar {
-      aspect-ratio: 3/4; background: var(--gray); position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .member-avatar-placeholder { font-family: var(--font-display); font-size: 80px; color: rgba(255,255,255,0.06); line-height: 1; user-select: none; }
-    .member-avatar-initials { position: absolute; bottom: 16px; left: 16px; font-family: var(--font-display); font-size: 36px; color: rgba(255,255,255,0.5); }
-    .member-info { padding: 20px; border-top: 1px solid var(--gray-line); }
-    .member-name { font-family: var(--font-serif); font-size: 18px; line-height: 1.2; margin-bottom: 6px; }
-    .member-role { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
-    .member-linkedin {
-      display: inline-flex; align-items: center; gap: 6px; margin-top: 12px;
-      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--gray-light); transition: color 0.2s;
-    }
-    .member-linkedin:hover { color: var(--white); }
-
-    /* Join CTA */
-    .join-section { background: var(--gray); }
-    .join-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .join-content h2 { margin-bottom: 24px; }
-    .join-content p { font-size: clamp(15px, 1.3vw, 18px); line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
-    .join-visual {
-      height: 400px; background: var(--black); border: 1px solid var(--gray-line);
-      display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
-    }
-    .join-visual-text {
-      position: absolute; font-family: var(--font-display);
-      font-size: clamp(60px, 12vw, 160px); color: rgba(230,43,30,0.12);
-      line-height: 1; text-transform: uppercase;
-    }
-    .join-visual-inner { position: relative; text-align: center; }
-    .join-visual-inner h3 { font-family: var(--font-display); font-size: 40px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .join-visual-inner p { font-size: 13px; color: var(--gray-light); margin-top: 8px; }
-
-    @media (max-width: 1024px) { .members-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 768px) {
-      .team-intro-grid { grid-template-columns: 1fr; gap: 40px; }
-      .members-grid { grid-template-columns: 1fr 1fr; }
-      .join-inner { grid-template-columns: 1fr; }
-      .dept-header { flex-wrap: wrap; }
-    }
-    @media (max-width: 480px) { .members-grid { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="css/team.css">
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero__bg">TEAM</div>
+<!-- ── PAGE HERO ── -->
+<section class="team-hero">
+  <div class="team-hero-bg">TEAM</div>
   <div class="container">
     <span class="t-label anim-fade-up">The People Behind the Event</span>
-    <h1 class="t-title anim-fade-up anim-delay-2" style="margin-top:24px;">Meet the<br><span class="text-red">Team</span></h1>
+    <h1 class="t-title anim-fade-up anim-delay-2" style="margin-top:24px;">
+      Meet the<br><span style="color:var(--red);">Team</span>
+    </h1>
     <p class="t-subheading anim-fade-up anim-delay-3" style="margin-top:32px;color:rgba(255,255,255,0.6);max-width:560px;">
       Passionate students and professionals united by a shared belief in the power of ideas.
     </p>
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="section section--line">
+<!-- ── INTRO ── -->
+<section class="team-intro section">
   <div class="container">
     <div class="team-intro-grid">
       <div class="reveal">
         <span class="t-label">Our Team</span>
-        <h2 class="t-heading" style="margin-top:16px;">Built by<br><span class="text-red">Students,</span><br>for Everyone</h2>
+        <h2 class="t-heading" style="margin-top:16px;">Built by<br><span style="color:var(--red);">Students,</span><br>for Everyone</h2>
       </div>
       <div class="team-intro-right reveal">
         <p>TEDxUniversityofPiraeus is entirely organized by a dedicated team of students from the University of Piraeus. Each member brings unique skills, perspectives, and passion to create an event that truly reflects our community.</p>
@@ -102,21 +41,197 @@
   </div>
 </section>
 
-<!-- TEAM GRID (rendered from data) -->
-<section class="section section--line">
-  <div class="container" id="teamContainer"></div>
+<!-- ── TEAM GRID ── -->
+<section class="team-grid-section section">
+  <div class="container">
+
+    <!-- Leadership -->
+    <div class="team-department reveal">
+      <div class="dept-header">
+        <div class="dept-number">01</div>
+        <div class="dept-name">Leadership</div>
+        <div class="dept-count">Core Team</div>
+      </div>
+      <div class="members-grid stagger-group">
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΟΛ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Organizer Name</div>
+            <div class="member-role">President / Licensee</div>
+            <a href="#" class="member-linkedin" target="_blank">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΔΚ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Organizer Name</div>
+            <div class="member-role">Vice President</div>
+            <a href="#" class="member-linkedin" target="_blank">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curation -->
+    <div class="team-department reveal">
+      <div class="dept-header">
+        <div class="dept-number">02</div>
+        <div class="dept-name">Curation & Content</div>
+        <div class="dept-count">Speaker & Programme Team</div>
+      </div>
+      <div class="members-grid stagger-group">
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΑΠ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Head of Curation</div>
+          </div>
+        </div>
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΜΓ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Speaker Coordinator</div>
+          </div>
+        </div>
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΝΣ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Content Strategist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing -->
+    <div class="team-department reveal">
+      <div class="dept-header">
+        <div class="dept-number">03</div>
+        <div class="dept-name">Marketing & Design</div>
+        <div class="dept-count">Creative Team</div>
+      </div>
+      <div class="members-grid stagger-group">
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΕΜ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Head of Marketing</div>
+          </div>
+        </div>
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΚΛ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Creative Director</div>
+          </div>
+        </div>
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΠΝ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Social Media Manager</div>
+          </div>
+        </div>
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΡΤ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Graphic Designer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Operations -->
+    <div class="team-department reveal">
+      <div class="dept-header">
+        <div class="dept-number">04</div>
+        <div class="dept-name">Operations & Logistics</div>
+        <div class="dept-count">Event Production</div>
+      </div>
+      <div class="members-grid stagger-group">
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΘΒ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Head of Operations</div>
+          </div>
+        </div>
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΙΧ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Venue & Logistics</div>
+          </div>
+        </div>
+        <div class="member-card reveal">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">◉</div>
+            <div class="member-avatar-initials">ΣΦ</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Team Member</div>
+            <div class="member-role">Sponsorships</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<!-- JOIN -->
-<section class="section join-section">
+<!-- ── JOIN ── -->
+<section class="join-section section">
   <div class="container">
     <div class="join-inner">
       <div class="join-content reveal">
         <span class="t-label">Get Involved</span>
-        <h2 class="t-heading" style="margin-top:16px;">Want to<br><span class="text-red">Join Us?</span></h2>
+        <h2 class="t-heading" style="margin-top:16px;">Want to<br><span style="color:var(--red);">Join Us?</span></h2>
         <p>We're always looking for passionate, driven individuals who want to be part of something meaningful. Whether you're interested in curation, design, logistics, or sponsorships — there's a place for you on the team.</p>
         <a href="#" class="btn btn-primary btn-arrow">Apply to the Team</a>
       </div>
+
       <div class="join-visual reveal">
         <div class="join-visual-text">JOIN</div>
         <div class="join-visual-inner">
@@ -132,90 +247,5 @@
 
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>
-<script>
-  /* ── Team data — edit names / roles / LinkedIn URLs here ── */
-  var DEPARTMENTS = [
-    {
-      number: '01', name: 'Leadership', count: 'Core Team',
-      members: [
-        { name: 'Organizer Name', role: 'President / Licensee', initials: 'ΟΛ', linkedin: '#' },
-        { name: 'Organizer Name', role: 'Vice President',        initials: 'ΔΚ', linkedin: '#' }
-      ]
-    },
-    {
-      number: '02', name: 'Curation & Content', count: 'Speaker & Programme Team',
-      members: [
-        { name: 'Team Member', role: 'Head of Curation',    initials: 'ΑΠ' },
-        { name: 'Team Member', role: 'Speaker Coordinator', initials: 'ΜΓ' },
-        { name: 'Team Member', role: 'Content Strategist',  initials: 'ΝΣ' }
-      ]
-    },
-    {
-      number: '03', name: 'Marketing & Design', count: 'Creative Team',
-      members: [
-        { name: 'Team Member', role: 'Head of Marketing',     initials: 'ΕΜ' },
-        { name: 'Team Member', role: 'Creative Director',     initials: 'ΚΛ' },
-        { name: 'Team Member', role: 'Social Media Manager',  initials: 'ΠΝ' },
-        { name: 'Team Member', role: 'Graphic Designer',      initials: 'ΡΤ' }
-      ]
-    },
-    {
-      number: '04', name: 'Operations & Logistics', count: 'Event Production',
-      members: [
-        { name: 'Team Member', role: 'Head of Operations', initials: 'ΘΒ' },
-        { name: 'Team Member', role: 'Venue & Logistics',  initials: 'ΙΧ' },
-        { name: 'Team Member', role: 'Sponsorships',       initials: 'ΣΦ' }
-      ]
-    }
-  ];
-
-  var LINKEDIN_ICON = '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 11.001-4.124 2.062 2.062 0 01-.001 4.124zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>';
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-
-  function memberCard(m) {
-    var link = m.linkedin
-      ? '<a href="' + escapeHtml(m.linkedin) + '" class="member-linkedin" target="_blank" rel="noopener">' + LINKEDIN_ICON + 'LinkedIn</a>'
-      : '';
-    return '' +
-      '<div class="member-card reveal">' +
-        '<div class="member-avatar">' +
-          '<div class="member-avatar-placeholder">◉</div>' +
-          '<div class="member-avatar-initials">' + escapeHtml(m.initials) + '</div>' +
-        '</div>' +
-        '<div class="member-info">' +
-          '<div class="member-name">' + escapeHtml(m.name) + '</div>' +
-          '<div class="member-role">' + escapeHtml(m.role) + '</div>' +
-          link +
-        '</div>' +
-      '</div>';
-  }
-
-  function departmentBlock(d) {
-    return '' +
-      '<div class="team-department reveal">' +
-        '<div class="dept-header">' +
-          '<div class="dept-number">' + escapeHtml(d.number) + '</div>' +
-          '<div class="dept-name">' + escapeHtml(d.name) + '</div>' +
-          '<div class="dept-count">' + escapeHtml(d.count) + '</div>' +
-        '</div>' +
-        '<div class="members-grid stagger-group">' +
-          d.members.map(memberCard).join('') +
-        '</div>' +
-      '</div>';
-  }
-
-  (function renderTeam() {
-    var container = document.getElementById('teamContainer');
-    if (!container) return;
-    container.innerHTML = DEPARTMENTS.map(departmentBlock).join('');
-    // Re-run reveal/stagger observers now that cards exist.
-    document.dispatchEvent(new CustomEvent('components:ready'));
-  })();
-</script>
 </body>
 </html>

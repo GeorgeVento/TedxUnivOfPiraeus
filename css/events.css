@@ -1,0 +1,300 @@
+.events-hero {
+      padding-top: calc(var(--nav-height) + 100px);
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--gray-line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .events-hero-bg-text {
+      position: absolute;
+      right: -3%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: clamp(120px, 22vw, 340px);
+      color: rgba(255,255,255,0.03);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    /* Event banner */
+    .event-banner {
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .event-poster {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .poster-visual {
+      aspect-ratio: 3/4;
+      background: var(--gray);
+      border: 1px solid var(--gray-line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--red);
+    }
+
+    .poster-bg-word {
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      font-family: var(--font-display);
+      font-size: 200px;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .poster-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .poster-ted-logo {
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 20px;
+      padding: 5px 12px 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .poster-year {
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      color: var(--gray-light);
+    }
+
+    .poster-center {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .poster-theme-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      margin-bottom: 16px;
+    }
+
+    .poster-theme {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 8vw, 96px);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .poster-divider {
+      width: 32px;
+      height: 2px;
+      background: var(--red);
+      margin: 24px auto;
+    }
+
+    .poster-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--gray-light);
+    }
+
+    .poster-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .poster-location {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+    }
+
+    .poster-date-large {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--white);
+    }
+
+    /* Event details */
+    .event-details {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .detail-item {
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .detail-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .detail-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .detail-value {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .detail-sub {
+      font-size: 14px;
+      color: var(--gray-light);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    /* Agenda */
+    .agenda-section {
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .agenda-grid {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--gray-line);
+      border: 1px solid var(--gray-line);
+    }
+
+    .agenda-item {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 40px;
+      align-items: center;
+      background: var(--black);
+      padding: 28px 40px;
+      transition: background 0.2s;
+    }
+
+    .agenda-item:hover { background: var(--gray); }
+
+    .agenda-time {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: var(--gray-light);
+    }
+
+    .agenda-title {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 1.5vw, 22px);
+      line-height: 1.3;
+    }
+
+    .agenda-desc {
+      font-size: 13px;
+      color: var(--gray-light);
+      margin-top: 4px;
+    }
+
+    .agenda-type {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--gray-line);
+      color: var(--gray-light);
+      white-space: nowrap;
+    }
+
+    .agenda-type.talk { border-color: var(--red); color: var(--red); }
+    .agenda-type.break { border-color: var(--gray-mid); }
+    .agenda-type.performance { border-color: #4a9eff; color: #4a9eff; }
+    .agenda-type.opening { border-color: var(--white); color: var(--white); }
+
+    /* Ticket section */
+    .ticket-section {
+      padding: var(--section-pad) 0;
+      background: var(--red);
+      text-align: center;
+    }
+
+    .ticket-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(60px, 12vw, 180px);
+      line-height: 0.9;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .ticket-section p {
+      font-size: clamp(16px, 1.5vw, 20px);
+      color: rgba(255,255,255,0.8);
+      max-width: 500px;
+      margin: 0 auto 48px;
+    }
+
+    .ticket-info {
+      display: inline-flex;
+      gap: 48px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ticket-info-item {
+      text-align: center;
+    }
+
+    .ticket-info-item-value {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--white);
+    }
+
+    .ticket-info-item-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .event-poster { grid-template-columns: 1fr; }
+      .agenda-item { grid-template-columns: 1fr; gap: 8px; }
+      .agenda-type { display: none; }
+    }

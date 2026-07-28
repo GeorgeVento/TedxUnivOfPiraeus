@@ -1,43 +1,27 @@
-/* =========================================================
-   TEDxUniversityofPiraeus 2026 — "Un-rushed"
-   Global Design System
-   ========================================================= */
+/* =========================================
+   TEDxUniversityofPiraeus — Design System
+   ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
-/* ---------------------------------------------------------
-   1. TOKENS
-   --------------------------------------------------------- */
 :root {
-  /* Brand */
-  --red:        #E62B1E;
-  --red-dark:   #C0241A;
-  --black:      #0A0A0A;
-  --white:      #F5F3EF;
-  --gray:       #1A1A1A;
-  --gray-mid:   #2E2E2E;
-  --gray-light: #888888;
-  --gray-line:  #222222;
-  --accent-blue:#4A9EFF;
+  --red: #E62B1E;
+  --black: #0A0A0A;
+  --white: #F5F3EF;
+  --gray: #1A1A1A;
+  --gray-mid: #2E2E2E;
+  --gray-light: #888;
+  --gray-line: #222;
 
-  /* Type */
   --font-display: 'Bebas Neue', sans-serif;
-  --font-serif:   'DM Serif Display', serif;
-  --font-body:    'DM Sans', sans-serif;
+  --font-serif: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
 
-  /* Layout */
-  --nav-height:  72px;
-  --max-width:   1400px;
+  --nav-height: 72px;
+  --max-width: 1400px;
   --section-pad: clamp(80px, 10vw, 160px);
-  --gutter:      clamp(20px, 5vw, 80px);
-
-  /* Motion */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ---------------------------------------------------------
-   2. RESET
-   --------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -47,7 +31,21 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  -webkit-text-size-adjust: 100%;
+}
+
+/* Logo Image Custom Styles */
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  padding: 8px;
+  height: 150px;
+  width: auto;
+  display: block;
 }
 
 body {
@@ -57,34 +55,34 @@ body {
   font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
+  cursor: default;
 }
 
-a   { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-ul  { list-style: none; }
-button { font-family: inherit; }
+::selection {
+  background: var(--red);
+  color: var(--white);
+}
 
-::selection { background: var(--red); color: var(--white); }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-/* Scrollbar */
-::-webkit-scrollbar       { width: 4px; }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--red); }
 
-/* Film-grain overlay */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.025;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-/* ---------------------------------------------------------
-   3. TYPOGRAPHY SCALE
-   --------------------------------------------------------- */
+/* =========================================
+   TYPOGRAPHY SCALE
+   ========================================= */
 .t-hero {
   font-family: var(--font-display);
   font-size: clamp(72px, 14vw, 220px);
@@ -130,22 +128,30 @@ body::after {
   font-weight: 300;
 }
 
-.text-red { color: var(--red); }
-
-/* ---------------------------------------------------------
-   4. LAYOUT UTILITIES
-   --------------------------------------------------------- */
+/* =========================================
+   LAYOUT UTILITIES
+   ========================================= */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 0 clamp(20px, 5vw, 80px);
 }
 
-.section       { padding: var(--section-pad) 0; }
-.section--line { border-bottom: 1px solid var(--gray-line); }
+.section {
+  padding: var(--section-pad) 0;
+}
 
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
 
 .flex-between {
   display: flex;
@@ -153,33 +159,34 @@ body::after {
   align-items: center;
 }
 
-.divider  { width: 100%; height: 1px; background: var(--gray-line); }
-.red-line { display: block; width: 48px; height: 3px; background: var(--red); margin-bottom: 24px; }
-
-/* ---------------------------------------------------------
-   5. NAVBAR
-   --------------------------------------------------------- */
+/* =========================================
+   NAVBAR
+   ========================================= */
 .navbar {
   position: fixed;
-  inset: 0 0 auto 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 var(--gutter);
-  border-bottom: 1px solid transparent;
+  padding: 0 clamp(20px, 5vw, 80px);
   transition: background 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-color: var(--gray-line);
 }
 
-.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
 .nav-logo-ted {
   background: var(--red);
@@ -209,23 +216,28 @@ body::after {
   max-width: 120px;
 }
 
-.nav-links { display: flex; align-items: center; gap: 40px; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
 
 .nav-links a {
-  position: relative;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray-light);
   transition: color 0.2s;
+  position: relative;
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
-  left: 0;
   bottom: -3px;
+  left: 0;
   width: 0;
   height: 1px;
   background: var(--red);
@@ -233,10 +245,14 @@ body::after {
 }
 
 .nav-links a:hover,
-.nav-links a.active { color: var(--white); }
+.nav-links a.active {
+  color: var(--white);
+}
 
 .nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
+.nav-links a.active::after {
+  width: 100%;
+}
 
 .nav-cta {
   background: var(--red);
@@ -248,19 +264,21 @@ body::after {
   font-weight: 500;
   transition: background 0.2s !important;
 }
-.nav-cta::after  { display: none !important; }
-.nav-cta:hover   { background: var(--red-dark); color: var(--white) !important; }
+
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: #c0241a !important; color: var(--white) !important; }
 
 /* Hamburger */
 .nav-hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
+  cursor: pointer;
   padding: 8px;
   background: none;
   border: none;
-  cursor: pointer;
 }
+
 .nav-hamburger span {
   display: block;
   width: 24px;
@@ -268,6 +286,7 @@ body::after {
   background: var(--white);
   transition: all 0.3s ease;
 }
+
 .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
@@ -276,31 +295,41 @@ body::after {
 .nav-mobile {
   display: none;
   position: fixed;
-  inset: var(--nav-height) 0 0 0;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: var(--black);
   z-index: 999;
-  padding: 60px var(--gutter);
+  padding: 60px clamp(20px, 5vw, 80px);
   flex-direction: column;
   gap: 32px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-.nav-mobile.open { display: flex; opacity: 1; pointer-events: all; }
+
+.nav-mobile.open {
+  display: flex;
+  opacity: 1;
+  pointer-events: all;
+}
+
 .nav-mobile a {
   font-family: var(--font-display);
   font-size: clamp(48px, 10vw, 80px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 1;
   transition: color 0.2s;
+  line-height: 1;
 }
+
 .nav-mobile a:hover { color: var(--red); }
 
-/* ---------------------------------------------------------
-   6. BUTTONS
-   --------------------------------------------------------- */
+/* =========================================
+   BUTTONS
+   ========================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -314,29 +343,72 @@ body::after {
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-primary { background: var(--red); color: var(--white); }
-.btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+}
 
-.btn-outline { background: transparent; color: var(--white); border: 1px solid var(--white); }
-.btn-outline:hover { background: var(--white); color: var(--black); transform: translateY(-2px); }
+.btn-primary:hover {
+  background: #c0241a;
+  transform: translateY(-2px);
+}
 
-.btn-white { background: var(--white); color: var(--red); }
-.btn-white:hover { background: var(--black); color: var(--white); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+}
 
-.btn-arrow::after { content: '→'; font-size: 16px; transition: transform 0.2s; }
-.btn-arrow:hover::after { transform: translateX(4px); }
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translateY(-2px);
+}
 
-/* ---------------------------------------------------------
-   7. SECTION LABEL
-   --------------------------------------------------------- */
+.btn-arrow::after {
+  content: '→';
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.btn-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   DIVIDER
+   ========================================= */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-line);
+}
+
+/* =========================================
+   RED ACCENT LINE
+   ========================================= */
+.red-line {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--red);
+  margin-bottom: 24px;
+}
+
+/* =========================================
+   SECTION LABEL
+   ========================================= */
 .section-label {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 48px;
 }
+
 .section-label::before {
   content: '';
   display: block;
@@ -345,9 +417,9 @@ body::after {
   background: var(--red);
 }
 
-/* ---------------------------------------------------------
-   8. CARDS
-   --------------------------------------------------------- */
+/* =========================================
+   CARDS
+   ========================================= */
 .card {
   border: 1px solid var(--gray-line);
   padding: 40px 32px;
@@ -355,83 +427,36 @@ body::after {
   overflow: hidden;
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
+
 .card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 3px; height: 0;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
   background: var(--red);
   transition: height 0.4s ease;
 }
-.card:hover { border-color: var(--gray-mid); transform: translateY(-4px); }
-.card:hover::before { height: 100%; }
 
-/* ---------------------------------------------------------
-   9. PAGE HERO (inner pages)
-   --------------------------------------------------------- */
-.page-hero {
-  padding-top: calc(var(--nav-height) + 100px);
-  padding-bottom: 100px;
-  border-bottom: 1px solid var(--gray-line);
-  position: relative;
-  overflow: hidden;
+.card:hover {
+  border-color: var(--gray-mid);
+  transform: translateY(-4px);
 }
 
-.page-hero__bg {
-  position: absolute;
-  right: -3%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-display);
-  font-size: clamp(120px, 22vw, 360px);
-  color: rgba(255, 255, 255, 0.03);
-  line-height: 1;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
+.card:hover::before {
+  height: 100%;
 }
 
-/* ---------------------------------------------------------
-   10. TICKER
-   --------------------------------------------------------- */
-.ticker {
-  background: var(--red);
-  overflow: hidden;
-  padding: 14px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.ticker-track {
-  display: flex;
-  white-space: nowrap;
-  animation: tickerScroll 20s linear infinite;
-}
-.ticker-item {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 0 32px;
-  font-family: var(--font-display);
-  font-size: 20px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-.ticker-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  flex-shrink: 0;
-}
-
-/* ---------------------------------------------------------
-   11. FOOTER
-   --------------------------------------------------------- */
+/* =========================================
+   FOOTER
+   ========================================= */
 .footer {
   background: var(--gray);
   border-top: 1px solid var(--gray-line);
   padding: 80px 0 40px;
 }
+
 .footer-top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -440,13 +465,46 @@ body::after {
   border-bottom: 1px solid var(--gray-line);
   margin-bottom: 40px;
 }
+
+.footer-brand .nav-logo {
+  margin-bottom: 20px;
+}
+
 .footer-brand p {
   font-size: 13px;
   color: var(--gray-light);
   line-height: 1.7;
   max-width: 260px;
 }
-.footer-nav h4,
+
+.footer-nav h4 {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  margin-bottom: 20px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav ul a {
+  font-size: 14px;
+  color: var(--white);
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.footer-nav ul a:hover {
+  opacity: 1;
+  color: var(--red);
+}
+
 .footer-social h4 {
   font-size: 11px;
   font-weight: 500;
@@ -455,16 +513,13 @@ body::after {
   color: var(--gray-light);
   margin-bottom: 20px;
 }
-.footer-nav ul { display: flex; flex-direction: column; gap: 12px; }
-.footer-nav ul a {
-  font-size: 14px;
-  color: var(--white);
-  opacity: 0.7;
-  transition: opacity 0.2s, color 0.2s;
-}
-.footer-nav ul a:hover { opacity: 1; color: var(--red); }
 
-.social-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .social-link {
   display: flex;
   align-items: center;
@@ -478,6 +533,7 @@ body::after {
   color: var(--gray-light);
   transition: all 0.2s;
 }
+
 .social-link:hover {
   border-color: var(--red);
   color: var(--white);
@@ -491,12 +547,14 @@ body::after {
   gap: 20px;
   flex-wrap: wrap;
 }
+
 .footer-copy {
   font-size: 11px;
   color: var(--gray-light);
   line-height: 1.6;
   max-width: 600px;
 }
+
 .footer-ted-badge {
   background: var(--red);
   color: var(--white);
@@ -507,17 +565,59 @@ body::after {
   flex-shrink: 0;
 }
 
-/* ---------------------------------------------------------
-   12. ANIMATIONS
-   --------------------------------------------------------- */
-@keyframes fadeUp       { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn       { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideUp      { to { transform: translateY(0); } }
-@keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes scrollPulse  { 0%,100% { opacity: 0.3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
-@keyframes breathe      { 0%,100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.03); } }
+/* =========================================
+   PAGE HERO (inner pages)
+   ========================================= */
+.page-hero {
+  padding-top: calc(var(--nav-height) + 80px);
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--gray-line);
+  position: relative;
+  overflow: hidden;
+}
 
-.anim-fade-up { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+.page-hero-bg-text {
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(120px, 20vw, 300px);
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lineExpand {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.anim-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
 .anim-delay-1 { animation-delay: 0.1s; }
 .anim-delay-2 { animation-delay: 0.2s; }
 .anim-delay-3 { animation-delay: 0.3s; }
@@ -532,21 +632,66 @@ body::after {
   transform: translateY(40px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-  .reveal { opacity: 1; transform: none; }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ---------------------------------------------------------
-   13. RESPONSIVE
-   --------------------------------------------------------- */
+/* =========================================
+   TICKER
+   ========================================= */
+.ticker {
+  background: var(--red);
+  overflow: hidden;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 0;
+  animation: tickerScroll 20s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--white);
+}
+
+.ticker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+/* =========================================
+   NOISE OVERLAY
+   ========================================= */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
 @media (max-width: 1024px) {
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
@@ -555,7 +700,7 @@ body::after {
 
 @media (max-width: 768px) {
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
+  .nav-links, .nav-cta-wrap { display: none; }
   .nav-hamburger { display: flex; }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }

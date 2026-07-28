@@ -1,120 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — TEDxUniversityofPiraeus 2026</title>
-  <meta name="description" content="About TEDxUniversityofPiraeus — what TEDx is, our mission and vision, and the story behind our 2026 'Un-rushed' event.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .tedx-explain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .tedx-explain-left p,
-    .tedx-explain-right p {
-      font-size: clamp(15px, 1.3vw, 18px); line-height: 1.8;
-      color: rgba(255,255,255,0.75); margin-bottom: 20px;
-    }
-    .tedx-highlight-box {
-      border-left: 3px solid var(--red); padding: 24px 28px;
-      background: rgba(230,43,30,0.06); margin-top: 32px;
-    }
-    .tedx-highlight-box p {
-      font-family: var(--font-serif); font-style: italic;
-      font-size: clamp(18px, 1.8vw, 24px); line-height: 1.5; color: var(--white); margin: 0;
-    }
-
-    /* Mission / Vision */
-    .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-line); margin-top: 60px; }
-    .mv-card { background: var(--black); padding: 56px 48px; position: relative; overflow: hidden; }
-    .mv-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-    .mv-card:first-child::before { background: var(--red); }
-    .mv-card:last-child::before  { background: var(--white); }
-    .mv-card-icon {
-      position: absolute; bottom: 24px; right: 32px;
-      font-family: var(--font-display); font-size: 64px;
-      color: rgba(255,255,255,0.05); line-height: 1;
-    }
-    .mv-card h3 {
-      font-family: var(--font-display); font-size: 48px; letter-spacing: 0.04em;
-      text-transform: uppercase; margin-bottom: 24px; color: var(--red);
-    }
-    .mv-card:last-child h3 { color: var(--white); }
-    .mv-card p {
-      font-size: clamp(15px, 1.3vw, 18px); line-height: 1.8;
-      color: rgba(255,255,255,0.7); max-width: 400px;
-    }
-
-    /* History timeline */
-    .history-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; margin-top: 60px; }
-    .history-intro p { font-size: clamp(15px, 1.3vw, 18px); line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
-    .timeline { position: relative; }
-    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--gray-line); }
-    .timeline-item { padding: 0 0 48px 48px; position: relative; }
-    .timeline-item:last-child { padding-bottom: 0; }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -4px; top: 6px;
-      width: 9px; height: 9px; border-radius: 50%; background: var(--red);
-    }
-    .timeline-year { font-family: var(--font-display); font-size: 48px; color: rgba(255,255,255,0.08); line-height: 1; margin-bottom: 8px; }
-    .timeline-title { font-family: var(--font-serif); font-size: 20px; color: var(--white); margin-bottom: 8px; }
-    .timeline-desc { font-size: 14px; color: var(--gray-light); line-height: 1.7; max-width: 400px; }
-
-    @media (max-width: 768px) {
-      .tedx-explain-grid { grid-template-columns: 1fr; gap: 48px; }
-      .mv-grid { grid-template-columns: 1fr; }
-      .history-intro { grid-template-columns: 1fr; gap: 40px; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero__bg">ABOUT</div>
+<!-- ── PAGE HERO ── -->
+<section class="about-hero">
+  <div class="about-hero-bg">ABOUT</div>
   <div class="container">
     <span class="t-label anim-fade-up">About TEDxUniversityofPiraeus</span>
-    <h1 class="t-title anim-fade-up anim-delay-2" style="margin-top:24px;max-width:800px;">
-      Ideas That<br><span class="text-red">Change</span><br>Everything
+    <h1 class="t-title anim-fade-up anim-delay-2" style="margin-top:24px; max-width:800px;">
+      Ideas That<br><span style="color:var(--red);">Change</span><br>Everything
     </h1>
-    <p class="t-subheading anim-fade-up anim-delay-3" style="margin-top:32px;max-width:600px;color:rgba(255,255,255,0.6);">
+    <p class="t-subheading anim-fade-up anim-delay-3" style="margin-top:32px; max-width:600px; color:rgba(255,255,255,0.6);">
       Building a stage for Piraeus. A community for ideas.
     </p>
   </div>
 </section>
 
-<!-- WHAT IS TEDx -->
-<section class="section section--line">
+<!-- ── WHAT IS TEDx ── -->
+<section class="tedx-explain section">
   <div class="container">
     <div class="tedx-explain-grid">
       <div class="tedx-explain-left reveal">
         <span class="t-label">The Global Movement</span>
-        <h2 class="t-heading" style="margin-top:16px;">What is <span class="text-red">TED</span>x?</h2>
-        <p>TED is a nonprofit devoted to spreading ideas, usually in the form of short, powerful talks. It began in 1984 as a conference where Technology, Entertainment and Design converged, and today covers almost every topic — from science to business to global issues — in more than 100 languages.</p>
+        <h2 class="t-heading" style="margin-top:16px;">What is <span style="color:var(--red);">TED</span>x?</h2>
+        <p>TED is a nonprofit devoted to spreading ideas, usually in the form of short, powerful talks. TED began in 1984 as a conference where Technology, Entertainment and Design converged, and today covers almost all topics — from science to business to global issues — in more than 100 languages.</p>
         <p>In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.</p>
         <div class="tedx-highlight-box">
-          <p>We believe passionately in the power of ideas to change attitudes, lives and, ultimately, the world.</p>
+          <p>"At TED, we believe passionately in the power of ideas to change attitudes, lives and, ultimately, the world."</p>
         </div>
       </div>
 
       <div class="tedx-explain-right reveal" style="padding-top:8px;">
         <span class="t-label">Our Story</span>
-        <h2 class="t-heading" style="margin-top:16px;margin-bottom:32px;">TEDx<span class="text-red">University</span><br>of Piraeus</h2>
-        <p>At the University of Piraeus, we believe that ideas have the power to transform communities, industries, and lives. TEDxUniversityofPiraeus was born from a desire to create a local platform where brilliant minds — students, academics, entrepreneurs, artists, and thinkers — can share their most powerful ideas.</p>
-        <p>Located in Piraeus, one of Europe's largest and most historic ports, we sit at the intersection of commerce, culture, and innovation. Our event reflects the spirit of this city: bold, dynamic, and always looking forward.</p>
-        <p>Each year we curate a diverse lineup of speakers who challenge conventional thinking and offer fresh perspectives on the most pressing questions of our time.</p>
+        <h2 class="t-heading" style="margin-top:16px; margin-bottom:32px;">TEDx<span style="color:var(--red);">University</span><br>of Piraeus</h2>
+
+        <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.8;color:rgba(255,255,255,0.75);margin-bottom:20px;">
+          At the University of Piraeus, we believe that ideas have the power to transform communities, industries, and lives. TEDxUniversityofPiraeus was born out of a desire to create a local platform where brilliant minds — students, academics, entrepreneurs, artists, and thinkers — could share their most powerful ideas.
+        </p>
+        <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.8;color:rgba(255,255,255,0.75);margin-bottom:20px;">
+          Located in Piraeus, one of Europe's largest and most historic ports, we are uniquely positioned at the intersection of commerce, culture, and innovation. Our event reflects the spirit of this city: bold, dynamic, and always looking forward.
+        </p>
+        <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.8;color:rgba(255,255,255,0.75);">
+          Every year, we curate a diverse lineup of speakers who challenge conventional thinking and offer fresh perspectives on the most pressing questions of our time.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MISSION & VISION -->
-<section class="section section--line">
+<!-- ── MISSION & VISION ── -->
+<section class="mission-vision section">
   <div class="container">
     <div class="reveal">
       <span class="t-label">Our Purpose</span>
-      <h2 class="t-heading" style="margin-top:12px;">Mission &amp; Vision</h2>
+      <h2 class="t-heading" style="margin-top:12px;">Mission & Vision</h2>
     </div>
+
     <div class="mv-grid">
       <div class="mv-card reveal">
         <div class="mv-card-icon">M</div>
@@ -130,18 +80,20 @@
   </div>
 </section>
 
-<!-- HISTORY -->
-<section class="section">
+<!-- ── HISTORY ── -->
+<section class="history section">
   <div class="container">
     <div class="reveal">
       <span class="t-label">Our Journey</span>
-      <h2 class="t-heading" style="margin-top:12px;">A Brief <span class="text-red">History</span></h2>
+      <h2 class="t-heading" style="margin-top:12px;">A Brief <span style="color:var(--red);">History</span></h2>
     </div>
+
     <div class="history-intro">
       <div class="reveal">
         <p>From a small group of passionate students to a full-scale TEDx event, our journey has been one of constant growth, learning, and impact.</p>
         <a href="team.html" class="btn btn-outline btn-arrow" style="margin-top:24px;">Meet the Team</a>
       </div>
+
       <div class="timeline reveal">
         <div class="timeline-item">
           <div class="timeline-year">2024</div>
@@ -163,7 +115,6 @@
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
     <span class="ticker-item">TEDxUniversityofPiraeus<span class="ticker-dot"></span></span>

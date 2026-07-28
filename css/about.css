@@ -1,0 +1,208 @@
+.about-hero {
+      padding-top: calc(var(--nav-height) + 100px);
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--gray-line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero-bg {
+      position: absolute;
+      right: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: clamp(160px, 25vw, 380px);
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* WHAT IS TEDx */
+    .tedx-explain {
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .tedx-explain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .tedx-explain-left h2 {
+      margin-bottom: 32px;
+    }
+
+    .tedx-explain-left p {
+      font-size: clamp(15px, 1.3vw, 18px);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+
+    .tedx-highlight-box {
+      border-left: 3px solid var(--red);
+      padding: 24px 28px;
+      background: rgba(230, 43, 30, 0.06);
+      margin-top: 32px;
+    }
+
+    .tedx-highlight-box p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.5;
+      color: var(--white);
+      margin: 0;
+    }
+
+    /* About UniPiraeus */
+    .about-unipiraeus {
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid var(--gray-line);
+      background: rgba(255,255,255,0.01);
+    }
+
+    /* Mission Vision */
+    .mission-vision {
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--gray-line);
+      margin-top: 60px;
+    }
+
+    .mv-card {
+      background: var(--black);
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .mv-card:first-child::before { background: var(--red); }
+    .mv-card:last-child::before { background: var(--white); }
+
+    .mv-card-icon {
+      font-family: var(--font-display);
+      font-size: 64px;
+      color: rgba(255,255,255,0.05);
+      line-height: 1;
+      position: absolute;
+      bottom: 24px;
+      right: 32px;
+    }
+
+    .mv-card h3 {
+      font-family: var(--font-display);
+      font-size: 48px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: var(--red);
+    }
+
+    .mv-card:last-child h3 { color: var(--white); }
+
+    .mv-card p {
+      font-size: clamp(15px, 1.3vw, 18px);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+      max-width: 400px;
+    }
+
+    /* History */
+    .history {
+      padding: var(--section-pad) 0;
+    }
+
+    .history-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .history-intro p {
+      font-size: clamp(15px, 1.3vw, 18px);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+
+    .timeline {
+      margin-top: 80px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--gray-line);
+    }
+
+    .timeline-item {
+      padding-left: 48px;
+      padding-bottom: 48px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 48px;
+      color: rgba(255,255,255,0.08);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--gray-light);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    @media (max-width: 768px) {
+      .tedx-explain-grid { grid-template-columns: 1fr; gap: 48px; }
+      .mv-grid { grid-template-columns: 1fr; }
+      .history-intro { grid-template-columns: 1fr; gap: 40px; }
+    }

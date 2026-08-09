@@ -566,9 +566,4 @@
       .hero-meta { align-items: flex-start; text-align: left; }
       .stats-grid { grid-template-columns: 1fr; }
       .hero-bottom { flex-direction: column; }
-      .tiktok-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      .tiktok-grid { grid-template-columns: 1fr; }
     }

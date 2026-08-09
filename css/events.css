@@ -12,6 +12,7 @@
       top: 50%;
       transform: translateY(-50%);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(120px, 22vw, 340px);
       color: rgba(255,255,255,0.03);
       white-space: nowrap;
@@ -56,6 +57,7 @@
       bottom: -10px;
       left: -10px;
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 200px;
       color: rgba(255,255,255,0.04);
       line-height: 1;
@@ -72,6 +74,7 @@
       background: var(--red);
       color: var(--white);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 20px;
       padding: 5px 12px 3px;
       letter-spacing: 0.05em;
@@ -79,6 +82,7 @@
 
     .poster-year {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 14px;
       letter-spacing: 0.15em;
       color: var(--gray-light);
@@ -100,6 +104,7 @@
 
     .poster-theme {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(56px, 8vw, 96px);
       line-height: 0.9;
       letter-spacing: 0.02em;
@@ -116,6 +121,7 @@
 
     .poster-tagline {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-style: italic;
       font-size: 14px;
       color: var(--gray-light);
@@ -138,6 +144,7 @@
 
     .poster-date-large {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 28px;
       color: var(--white);
     }
@@ -170,6 +177,7 @@
 
     .detail-value {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(28px, 4vw, 48px);
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -212,6 +220,7 @@
 
     .agenda-time {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 20px;
       letter-spacing: 0.08em;
       color: var(--gray-light);
@@ -219,6 +228,7 @@
 
     .agenda-title {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-size: clamp(16px, 1.5vw, 22px);
       line-height: 1.3;
     }
@@ -254,6 +264,7 @@
 
     .ticket-section h2 {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(60px, 12vw, 180px);
       line-height: 0.9;
       color: var(--white);
@@ -281,6 +292,7 @@
 
     .ticket-info-item-value {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 32px;
       color: var(--white);
     }

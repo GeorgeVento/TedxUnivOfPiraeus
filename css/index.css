@@ -36,6 +36,7 @@
       top: calc(var(--nav-height) + 24px);
       right: clamp(20px, 5vw, 80px);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(80px, 15vw, 200px);
       color: rgba(255,255,255,0.04);
       line-height: 1;
@@ -59,6 +60,7 @@
       background: var(--red);
       color: var(--white);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 14px;
       padding: 4px 10px 2px;
       letter-spacing: 0.05em;
@@ -104,6 +106,7 @@
 
     .hero-tagline {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-style: italic;
       font-size: clamp(16px, 2vw, 24px);
       color: rgba(255,255,255,0.7);
@@ -121,6 +124,7 @@
 
     .hero-meta-date {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(36px, 4vw, 52px);
       letter-spacing: 0.05em;
       line-height: 1;
@@ -190,6 +194,7 @@
 
     .intro-stat-number {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 80px;
       line-height: 1;
       color: var(--red);
@@ -229,6 +234,7 @@
       top: 50%;
       transform: translateY(-50%);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(160px, 25vw, 400px);
       color: rgba(0,0,0,0.12);
       line-height: 1;
@@ -263,6 +269,7 @@
 
     .theme-title {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(80px, 18vw, 280px);
       line-height: 0.85;
       color: var(--white);
@@ -340,6 +347,7 @@
 
     .preview-card-number {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 80px;
       color: rgba(255,255,255,0.05);
       line-height: 1;
@@ -376,6 +384,7 @@
 
     .preview-card h3 {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 36px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -430,6 +439,7 @@
 
     .stat-item-number {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(48px, 6vw, 80px);
       color: var(--white);
       line-height: 1;
@@ -482,6 +492,68 @@
 
     .social-pill svg { color: var(--red); }
 
+    /* ── TIKTOK CORNER ── */
+    .tiktok-section {
+      border-top: 1px solid var(--gray-line);
+    }
+
+    .tiktok-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .tiktok-header p {
+      margin-top: 16px;
+      max-width: 460px;
+      font-size: clamp(15px, 1.3vw, 18px);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .tiktok-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .tiktok-card {
+      background: var(--gray);
+      border: 1px solid var(--gray-line);
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .tiktok-card:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+
+    .tiktok-card-embed {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--black);
+    }
+
+    .tiktok-card-embed blockquote.tiktok-embed {
+      margin: 0 !important;
+      width: 100% !important;
+    }
+
+    .tiktok-card-caption {
+      padding: 16px 18px;
+      border-top: 1px solid var(--gray-line);
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.75);
+    }
+
     /* Responsive home */
     @media (max-width: 1024px) {
       .intro-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -494,4 +566,9 @@
       .hero-meta { align-items: flex-start; text-align: left; }
       .stats-grid { grid-template-columns: 1fr; }
       .hero-bottom { flex-direction: column; }
+      .tiktok-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .tiktok-grid { grid-template-columns: 1fr; }
     }

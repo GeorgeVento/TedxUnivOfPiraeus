@@ -12,6 +12,7 @@
       top: 50%;
       transform: translateY(-50%);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(160px, 25vw, 380px);
       color: rgba(255,255,255,0.03);
       line-height: 1;
@@ -52,6 +53,7 @@
 
     .tedx-highlight-box p {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-style: italic;
       font-size: clamp(18px, 1.8vw, 24px);
       line-height: 1.5;
@@ -101,6 +103,7 @@
 
     .mv-card-icon {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 64px;
       color: rgba(255,255,255,0.05);
       line-height: 1;
@@ -111,6 +114,7 @@
 
     .mv-card h3 {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 48px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -181,6 +185,7 @@
 
     .timeline-year {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 48px;
       color: rgba(255,255,255,0.08);
       line-height: 1;
@@ -189,6 +194,7 @@
 
     .timeline-title {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-size: 20px;
       color: var(--white);
       margin-bottom: 8px;
@@ -331,6 +337,7 @@
 
     .chrono-year {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 26px;
       letter-spacing: 0.04em;
       color: var(--red);
@@ -340,6 +347,7 @@
 
     .chrono-caption {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-size: 15px;
       color: var(--white);
       line-height: 1.3;

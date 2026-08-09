@@ -24,6 +24,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(120px, 22vw, 340px);
       color: rgba(0,0,0,0.15);
       text-transform: uppercase;
@@ -54,6 +55,7 @@
 
     .ur-hero-title {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(80px, 18vw, 280px);
       line-height: 0.85;
       color: var(--white);
@@ -92,6 +94,7 @@
       padding: 40px 48px;
       border: 1px solid var(--gray-line);
       font-family: var(--font-serif);
+      font-weight: 500;
       font-style: italic;
       font-size: clamp(22px, 3vw, 40px);
       line-height: 1.4;
@@ -104,6 +107,7 @@
       top: -20px;
       left: 40px;
       font-family: var(--font-serif);
+      font-weight: 500;
       font-size: 80px;
       color: var(--red);
       line-height: 1;
@@ -135,6 +139,7 @@
 
     .statement-num {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 56px;
       color: var(--red);
       line-height: 1;
@@ -142,6 +147,7 @@
 
     .statement-content h3 {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-size: clamp(22px, 3vw, 36px);
       line-height: 1.2;
       margin-bottom: 16px;
@@ -190,6 +196,7 @@
 
     .vs-block-num {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 120px;
       color: rgba(255,255,255,0.06);
       position: absolute;
@@ -214,6 +221,7 @@
 
     .vs-block-text {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(40px, 6vw, 80px);
       line-height: 0.9;
       text-transform: uppercase;
@@ -243,6 +251,7 @@
 
     .ur-cta h2 {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(48px, 10vw, 140px);
       line-height: 0.9;
       margin-bottom: 40px;

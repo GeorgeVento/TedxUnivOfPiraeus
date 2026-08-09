@@ -12,6 +12,7 @@
       top: 50%;
       transform: translateY(-50%);
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(120px, 22vw, 340px);
       color: rgba(255,255,255,0.03);
       white-space: nowrap;
@@ -73,6 +74,7 @@
 
     .dept-number {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 56px;
       color: var(--red);
       line-height: 1;
@@ -81,6 +83,7 @@
 
     .dept-name {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(22px, 2.4vw, 30px);
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -135,6 +138,7 @@
 
     .member-avatar-placeholder {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 80px;
       color: rgba(255,255,255,0.06);
       line-height: 1;
@@ -146,6 +150,7 @@
       bottom: 16px;
       left: 16px;
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 36px;
       color: rgba(255,255,255,0.5);
     }
@@ -172,6 +177,7 @@
 
     .member-name {
       font-family: var(--font-serif);
+      font-weight: 500;
       font-size: 17px;
       line-height: 1.25;
       margin-bottom: 8px;
@@ -236,6 +242,7 @@
 
     .join-visual-text {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: clamp(60px, 12vw, 160px);
       color: rgba(230,43,30,0.12);
       line-height: 1;
@@ -250,6 +257,7 @@
 
     .join-visual-inner h3 {
       font-family: var(--font-display);
+      font-weight: 900;
       font-size: 40px;
       letter-spacing: 0.06em;
       text-transform: uppercase;

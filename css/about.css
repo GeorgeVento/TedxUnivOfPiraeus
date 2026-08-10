@@ -131,82 +131,6 @@
       max-width: 400px;
     }
 
-    /* History */
-    .history {
-      padding: var(--section-pad) 0;
-    }
-
-    .history-intro {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 80px;
-      align-items: start;
-      margin-top: 60px;
-    }
-
-    .history-intro p {
-      font-size: clamp(15px, 1.3vw, 18px);
-      line-height: 1.8;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 20px;
-    }
-
-    .timeline {
-      margin-top: 80px;
-      position: relative;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--gray-line);
-    }
-
-    .timeline-item {
-      padding-left: 48px;
-      padding-bottom: 48px;
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -4px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--red);
-    }
-
-    .timeline-year {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 48px;
-      color: rgba(255,255,255,0.08);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .timeline-title {
-      font-family: var(--font-serif);
-      font-weight: 500;
-      font-size: 20px;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .timeline-desc {
-      font-size: 14px;
-      color: var(--gray-light);
-      line-height: 1.7;
-      max-width: 400px;
-    }
-
     /* ── CHRONOLOGY ── */
     .chrono {
       padding: var(--section-pad) 0;
@@ -364,7 +288,6 @@
     @media (max-width: 768px) {
       .tedx-explain-grid { grid-template-columns: 1fr; gap: 48px; }
       .mv-grid { grid-template-columns: 1fr; }
-      .history-intro { grid-template-columns: 1fr; gap: 40px; }
 
       .chrono-scroll { padding: 24px 0; }
       .chrono-track { gap: 40px; }

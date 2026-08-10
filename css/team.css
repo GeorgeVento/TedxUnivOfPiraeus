@@ -109,13 +109,31 @@
       background: var(--gray);
       border: 1px solid var(--gray-line);
       overflow: hidden;
-      transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+      transition: border-color 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .member-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 4;
     }
 
     .member-card:hover {
       border-color: var(--red);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 40px -18px rgba(230,43,30,0.28), 0 20px 44px -22px rgba(0,0,0,0.75);
+    }
+
+    .member-card:hover::before {
+      transform: scaleX(1);
     }
 
     .member-avatar {
@@ -128,12 +146,34 @@
       justify-content: center;
     }
 
+    .member-avatar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--red);
+      mix-blend-mode: color;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .member-card:hover .member-avatar::before {
+      opacity: 0.55;
+    }
+
     .member-avatar::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%);
       pointer-events: none;
+      z-index: 3;
+      transition: background 0.5s ease;
+    }
+
+    .member-card:hover .member-avatar::after {
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
     }
 
     .member-avatar-placeholder {
@@ -159,20 +199,28 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
+      object-position: center center;
       display: block;
+      position: relative;
+      z-index: 1;
       filter: grayscale(100%) contrast(1.05);
       transform: scale(1);
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
     }
 
     .member-card:hover .member-avatar img {
-      transform: scale(1.07);
+      transform: scale(1.1);
+      filter: grayscale(60%) contrast(1.1);
     }
 
     .member-info {
       padding: 18px 20px 22px;
       border-top: 1px solid var(--gray-line);
+      transition: border-color 0.35s ease;
+    }
+
+    .member-card:hover .member-info {
+      border-color: var(--red);
     }
 
     .member-name {
@@ -181,14 +229,43 @@
       font-size: 17px;
       line-height: 1.25;
       margin-bottom: 8px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .member-name::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 1px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .member-card:hover .member-name::after {
+      transform: scaleX(1);
     }
 
     .member-role {
+      display: inline-block;
       font-size: 10.5px;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--red);
+      padding: 3px 0 3px 0;
+      border-radius: 2px;
+      transition: color 0.35s ease, background-color 0.35s ease, padding 0.35s ease;
+    }
+
+    .member-card:hover .member-role {
+      color: var(--black);
+      background-color: var(--red);
+      padding: 3px 8px;
     }
 
     .member-linkedin {

@@ -9,6 +9,16 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <symbol id="icon-sparkle" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2c.6 3.6 2 6.3 4.7 8.3 2.7 1.9 5.3 2.7 7.3 2.7-2 0-4.6.8-7.3 2.7-2.7 2-4.1 4.7-4.7 8.3-.6-3.6-2-6.3-4.7-8.3C4.6 13.8 2 13 0 13c2 0 4.6-.8 7.3-2.7C10 8.3 11.4 5.6 12 2z"/>
+  </symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="4"></circle>
+    <path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path>
+  </symbol>
+</svg>
+
 <div id="nav-placeholder"></div>
 
 <!-- ── PAGE HERO ── -->
@@ -30,13 +40,14 @@
   <div class="container">
     <div class="event-poster">
       <!-- Poster visual -->
-      <div class="poster-visual reveal">
+      <div class="poster-visual ur-halftone reveal">
+        <video class="poster-video" autoplay muted loop playsinline poster="images/unrushed/hero-poster.jpg">
+          <source src="videos/unrushed.mp4" type="video/mp4">
+        </video>
+        <div class="poster-video-scrim"></div>
+        <img src="images/unrushed/blob-cluster.svg" alt="" class="ur-blob" style="top:6%;right:-4%;width:130px;">
+        <img src="images/unrushed/sitting-figure.svg" alt="" class="ur-blob" style="bottom:-4%;left:-6%;width:150px;opacity:0.7;">
         <div class="poster-bg-word">UN-<br>RUSHED</div>
-
-        <div class="poster-top">
-          <span class="poster-ted-logo">TED</span>
-          <span class="poster-year">2026</span>
-        </div>
 
         <div class="poster-center">
           <div class="poster-theme-label">Theme</div>
@@ -47,7 +58,6 @@
 
         <div class="poster-bottom">
           <div class="poster-location">University of Piraeus<br>Piraeus, Greece</div>
-          <div class="poster-date-large">2026</div>
         </div>
       </div>
 
@@ -55,8 +65,13 @@
       <div class="event-details reveal">
         <div class="detail-item">
           <div class="detail-label">Date</div>
-          <div class="detail-value">TBA 2026</div>
-          <div class="detail-sub">The exact date will be announced soon. Follow our social media for updates.</div>
+          <div class="soon-reveal">
+            <div class="soon-badge"><svg width="20" height="20"><use href="#icon-sparkle"></use></svg></div>
+            <div>
+              <div class="detail-value">Coming Soon</div>
+              <div class="detail-sub">The exact date is being finalized. Register your interest and be the first to know the moment it drops.</div>
+            </div>
+          </div>
         </div>
 
         <div class="detail-item">
@@ -73,8 +88,13 @@
 
         <div class="detail-item">
           <div class="detail-label">Tickets</div>
-          <div class="detail-value">Free Admission</div>
-          <div class="detail-sub">This event is free to attend. Registration required. Limited seats available.</div>
+          <div class="soon-reveal">
+            <div class="soon-badge"><svg width="20" height="20"><use href="#icon-sparkle"></use></svg></div>
+            <div>
+              <div class="detail-value">Coming Soon</div>
+              <div class="detail-sub">Pricing & registration details will be announced soon. Limited seats available.</div>
+            </div>
+          </div>
         </div>
 
         <a href="#" class="btn btn-primary btn-arrow" style="align-self:flex-start;">
@@ -91,103 +111,152 @@
     <div class="reveal">
       <span class="t-label">Programme</span>
       <h2 class="t-heading" style="margin-top:12px;">Agenda <span style="color:var(--red);">Overview</span></h2>
-      <p style="font-size:14px;color:var(--gray-light);margin-top:16px;">* Times are approximate and subject to change. Full programme will be announced closer to the event.</p>
+      <p style="font-size:14px;color:var(--gray-light);margin-top:16px;">The shape of the day — full programme with exact times and speakers will be announced closer to the event.</p>
     </div>
 
-    <div class="agenda-grid reveal" style="margin-top:48px;">
-      <div class="agenda-item">
-        <div class="agenda-time">09:00</div>
-        <div>
-          <div class="agenda-title">Registration & Welcome Coffee</div>
-          <div class="agenda-desc">Doors open — collect your badge and meet fellow attendees</div>
+    <div class="agenda-soon reveal" style="margin-top:48px;">
+      <div class="agenda-grid">
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Registration & Welcome Coffee</div>
+            <div class="agenda-desc">Doors open — collect your badge and meet fellow attendees</div>
+          </div>
+          <span class="agenda-type">Opening</span>
         </div>
-        <span class="agenda-type">Opening</span>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Opening Ceremony</div>
+            <div class="agenda-desc">Welcome from the organizing team & introduction to "Un-rushed"</div>
+          </div>
+          <span class="agenda-type opening">Opening</span>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Session I — Morning Talks</div>
+            <div class="agenda-desc">First block of TEDx talks</div>
+          </div>
+          <span class="agenda-type talk">Talks</span>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Lunch Break & Networking</div>
+            <div class="agenda-desc">Connect with speakers and fellow attendees</div>
+          </div>
+          <span class="agenda-type break">Break</span>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Performance Interlude</div>
+            <div class="agenda-desc">A musical or artistic performance exploring the theme</div>
+          </div>
+          <span class="agenda-type performance">Performance</span>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Session II — Afternoon Talks</div>
+            <div class="agenda-desc">Second block of TEDx talks</div>
+          </div>
+          <span class="agenda-type talk">Talks</span>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Break & Refreshments</div>
+            <div class="agenda-desc">Take a breath. Reflect. Recharge.</div>
+          </div>
+          <span class="agenda-type break">Break</span>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Session III — Final Talks</div>
+            <div class="agenda-desc">Closing talks and keynote</div>
+          </div>
+          <span class="agenda-type talk">Talks</span>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time"><span class="agenda-time-dot"></span></div>
+          <div>
+            <div class="agenda-title">Closing Remarks & Reception</div>
+            <div class="agenda-desc">Reflect together on the day's ideas — networking reception to close</div>
+          </div>
+          <span class="agenda-type opening">Closing</span>
+        </div>
       </div>
 
-      <div class="agenda-item">
-        <div class="agenda-time">10:00</div>
-        <div>
-          <div class="agenda-title">Opening Ceremony</div>
-          <div class="agenda-desc">Welcome from the organizing team & introduction to "Un-rushed"</div>
-        </div>
-        <span class="agenda-type opening">Opening</span>
-      </div>
-
-      <div class="agenda-item">
-        <div class="agenda-time">10:30</div>
-        <div>
-          <div class="agenda-title">Session I — Morning Talks</div>
-          <div class="agenda-desc">First block of TEDx talks · 3 speakers</div>
-        </div>
-        <span class="agenda-type talk">Talks</span>
-      </div>
-
-      <div class="agenda-item">
-        <div class="agenda-time">12:30</div>
-        <div>
-          <div class="agenda-title">Lunch Break & Networking</div>
-          <div class="agenda-desc">Connect with speakers and fellow attendees</div>
-        </div>
-        <span class="agenda-type break">Break</span>
-      </div>
-
-      <div class="agenda-item">
-        <div class="agenda-time">13:30</div>
-        <div>
-          <div class="agenda-title">Performance Interlude</div>
-          <div class="agenda-desc">A musical or artistic performance exploring the theme</div>
-        </div>
-        <span class="agenda-type performance">Performance</span>
-      </div>
-
-      <div class="agenda-item">
-        <div class="agenda-time">14:00</div>
-        <div>
-          <div class="agenda-title">Session II — Afternoon Talks</div>
-          <div class="agenda-desc">Second block of TEDx talks · 3–4 speakers</div>
-        </div>
-        <span class="agenda-type talk">Talks</span>
-      </div>
-
-      <div class="agenda-item">
-        <div class="agenda-time">16:30</div>
-        <div>
-          <div class="agenda-title">Break & Refreshments</div>
-          <div class="agenda-desc">Take a breath. Reflect. Recharge.</div>
-        </div>
-        <span class="agenda-type break">Break</span>
-      </div>
-
-      <div class="agenda-item">
-        <div class="agenda-time">17:00</div>
-        <div>
-          <div class="agenda-title">Session III — Final Talks</div>
-          <div class="agenda-desc">Closing talks and keynote · 2 speakers</div>
-        </div>
-        <span class="agenda-type talk">Talks</span>
-      </div>
-
-      <div class="agenda-item">
-        <div class="agenda-time">18:30</div>
-        <div>
-          <div class="agenda-title">Closing Remarks & Reception</div>
-          <div class="agenda-desc">Reflect together on the day's ideas — networking reception to close</div>
-        </div>
-        <span class="agenda-type opening">Closing</span>
+      <div class="agenda-soon-overlay">
+        <div class="soon-badge soon-badge-lg"><svg width="26" height="26"><use href="#icon-sparkle"></use></svg></div>
+        <div class="agenda-soon-title">Coming Soon</div>
+        <div class="agenda-soon-sub">Exact times & speaker line-up drop soon. Hover to peek.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── TICKET CTA ── -->
-<section class="ticket-section">
+<!-- ── SPEAKERS ── -->
+<section class="speakers-section section">
   <div class="container">
     <div class="reveal">
-      <h2>Get Your<br> Ticket</h2>
-      <p>Seats are limited. Register your interest now to be among the first to receive updates and ticket information.</p>
-      <a href="#" class="btn-white" style="display:inline-flex;align-items:center;gap:12px;background:var(--white);color:var(--red);font-family:var(--font-body);font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:18px 48px 16px;transition:all 0.3s;">
-        Register Interest →
-      </a>
+      <span class="t-label">Line-up</span>
+      <h2 class="t-heading" style="margin-top:12px;">Speakers <span style="color:var(--red);">Coming Soon</span></h2>
+      <p style="font-size:14px;color:var(--gray-light);margin-top:16px;">Our 2026 speakers are being confirmed one by one — each slot below reveals their photo as they're announced.</p>
+    </div>
+
+    <div class="speakers-grid reveal" style="margin-top:48px;">
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 01</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 02</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 03</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 04</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 05</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 06</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 07</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-photo"><svg width="32" height="32"><use href="#icon-user"></use></svg></div>
+        <div class="speaker-card-label">Speaker 08</div>
+        <div class="speaker-card-status">Announcing Soon</div>
+      </div>
     </div>
   </div>
 </section>

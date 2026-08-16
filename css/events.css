@@ -34,7 +34,6 @@
 
     .poster-visual {
       aspect-ratio: 3/4;
-      background: var(--gray);
       border: 1px solid var(--gray-line);
       display: flex;
       flex-direction: column;
@@ -50,6 +49,23 @@
       top: 0; left: 0; right: 0;
       height: 4px;
       background: var(--red);
+      z-index: 2;
+    }
+
+    .poster-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: luminosity;
+      opacity: 0.5;
+    }
+
+    .poster-video-scrim {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 100% 80% at 50% 50%, transparent 40%, rgba(19,41,242,0.15) 100%);
     }
 
     .poster-bg-word {
@@ -59,33 +75,10 @@
       font-family: var(--font-display);
       font-weight: 900;
       font-size: 200px;
-      color: rgba(255,255,255,0.04);
+      color: rgba(19,41,242,0.15);
       line-height: 1;
       pointer-events: none;
-    }
-
-    .poster-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .poster-ted-logo {
-      background: var(--red);
-      color: var(--white);
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 20px;
-      padding: 5px 12px 3px;
-      letter-spacing: 0.05em;
-    }
-
-    .poster-year {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 14px;
-      letter-spacing: 0.15em;
-      color: var(--gray-light);
+      z-index: 1;
     }
 
     .poster-center {
@@ -98,7 +91,7 @@
       font-size: 10px;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--gray-light);
+      color: var(--ur-blue);
       margin-bottom: 16px;
     }
 
@@ -109,7 +102,7 @@
       line-height: 0.9;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--black);
     }
 
     .poster-divider {
@@ -124,7 +117,7 @@
       font-weight: 500;
       font-style: italic;
       font-size: 14px;
-      color: var(--gray-light);
+      color: rgba(10,10,10,0.65);
     }
 
     .poster-bottom {
@@ -139,14 +132,49 @@
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gray-light);
+      color: rgba(10,10,10,0.6);
     }
 
-    .poster-date-large {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 28px;
-      color: var(--white);
+    /* Coming Soon UI */
+    .soon-badge {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border: 1px solid var(--gray-line);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      background: rgba(230,43,30,0.06);
+      animation: soonPulse 3s ease-in-out infinite;
+    }
+
+    .soon-badge svg {
+      animation: soonSpin 5s linear infinite;
+    }
+
+    .soon-badge-lg {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes soonPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(230,43,30,0.25); }
+      50% { box-shadow: 0 0 0 10px rgba(230,43,30,0); }
+    }
+
+    @keyframes soonSpin {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.15); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .soon-reveal {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     /* Event details */
@@ -219,11 +247,148 @@
     .agenda-item:hover { background: var(--gray); }
 
     .agenda-time {
+      display: flex;
+      align-items: center;
+    }
+
+    .agenda-time-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: soonPulse 2s ease-in-out infinite;
+    }
+
+    /* Coming-soon agenda teaser */
+    .agenda-soon {
+      position: relative;
+    }
+
+    .agenda-soon .agenda-grid {
+      filter: blur(4px);
+      opacity: 0.5;
+      transition: filter 0.4s ease, opacity 0.4s ease;
+      user-select: none;
+    }
+
+    .agenda-soon:hover .agenda-grid {
+      filter: blur(1.5px);
+      opacity: 0.75;
+    }
+
+    .agenda-soon-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      pointer-events: none;
+      background: linear-gradient(100deg, transparent 30%, rgba(230,43,30,0.08) 50%, transparent 70%);
+      background-size: 250% 100%;
+      animation: soonShimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes soonShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -100% 0; }
+    }
+
+    .agenda-soon-title {
       font-family: var(--font-display);
       font-weight: 900;
-      font-size: 20px;
-      letter-spacing: 0.08em;
+      font-size: clamp(20px, 2.5vw, 28px);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .agenda-soon-sub {
+      font-size: 13px;
       color: var(--gray-light);
+      margin-top: 8px;
+    }
+
+    /* Speakers */
+    .speakers-section {
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gray-line);
+      border: 1px solid var(--gray-line);
+    }
+
+    .speaker-card {
+      background: var(--black);
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .speaker-card:hover {
+      background: var(--gray);
+      transform: translateY(-4px);
+    }
+
+    .speaker-photo {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gray-line);
+      background:
+        linear-gradient(100deg, var(--gray) 30%, var(--gray-mid) 50%, var(--gray) 70%);
+      background-size: 250% 100%;
+      animation: soonShimmer 3.5s ease-in-out infinite;
+      color: var(--gray-light);
+      transition: border-color 0.3s;
+    }
+
+    .speaker-card:hover .speaker-photo {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .speaker-card-label {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .speaker-card-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+    }
+
+    .speaker-card-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: soonPulse 2s ease-in-out infinite;
     }
 
     .agenda-title {
@@ -255,58 +420,10 @@
     .agenda-type.performance { border-color: #4a9eff; color: #4a9eff; }
     .agenda-type.opening { border-color: var(--white); color: var(--white); }
 
-    /* Ticket section */
-    .ticket-section {
-      padding: var(--section-pad) 0;
-      background: var(--red);
-      text-align: center;
-    }
-
-    .ticket-section h2 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(60px, 12vw, 180px);
-      line-height: 0.9;
-      color: var(--white);
-      margin-bottom: 32px;
-    }
-
-    .ticket-section p {
-      font-size: clamp(16px, 1.5vw, 20px);
-      color: rgba(255,255,255,0.8);
-      max-width: 500px;
-      margin: 0 auto 48px;
-    }
-
-    .ticket-info {
-      display: inline-flex;
-      gap: 48px;
-      margin-top: 48px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .ticket-info-item {
-      text-align: center;
-    }
-
-    .ticket-info-item-value {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 32px;
-      color: var(--white);
-    }
-
-    .ticket-info-item-label {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      margin-top: 4px;
-    }
-
     @media (max-width: 768px) {
       .event-poster { grid-template-columns: 1fr; }
       .agenda-item { grid-template-columns: 1fr; gap: 8px; }
       .agenda-type { display: none; }
+      .agenda-time { display: none; }
+      .speakers-grid { grid-template-columns: repeat(2, 1fr); }
     }

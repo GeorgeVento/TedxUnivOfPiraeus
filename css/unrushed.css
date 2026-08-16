@@ -1,4 +1,6 @@
-/* ── UNRUSHED HERO ── */
+/* ── UN-RUSHED PALETTE: shared .ur-halftone / .ur-blob utilities live in style.css ── */
+
+    /* ── UNRUSHED HERO ── */
     .ur-hero {
       min-height: 100vh;
       display: flex;
@@ -7,15 +9,30 @@
       padding-bottom: 80px;
       position: relative;
       overflow: hidden;
-      background: var(--red);
+    }
+
+    .ur-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.15);
+    }
+
+    .ur-hero-duotone {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--ur-blue) 0%, var(--ur-yellow) 100%);
+      mix-blend-mode: color;
     }
 
     .ur-hero-bg {
       position: absolute;
       inset: 0;
-      background: 
-        radial-gradient(ellipse 100% 80% at 50% 50%, rgba(0,0,0,0.3) 0%, transparent 70%),
-        linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(230,43,30,1) 60%);
+      background:
+        radial-gradient(ellipse 100% 80% at 50% 50%, rgba(0,0,0,0.35) 0%, transparent 70%),
+        linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.75) 60%);
     }
 
     .ur-hero-word {
@@ -26,7 +43,7 @@
       font-family: var(--font-display);
       font-weight: 900;
       font-size: clamp(120px, 22vw, 340px);
-      color: rgba(0,0,0,0.15);
+      color: rgba(19,41,242,0.28);
       text-transform: uppercase;
       white-space: nowrap;
       pointer-events: none;
@@ -69,10 +86,31 @@
       color: rgba(255,255,255,0.85);
     }
 
+    /* ── UN-RUSHED PAGE: dark ink on the yellow halftone sections ── */
+    .manifesto,
+    .statements,
+    .visual-story {
+      position: relative;
+      overflow: hidden;
+      color: var(--black);
+    }
+
+    .manifesto .t-label,
+    .statements .t-label,
+    .visual-story .t-label {
+      color: var(--ur-blue);
+    }
+
+    .manifesto .t-heading,
+    .statements .t-heading,
+    .visual-story .t-heading {
+      color: var(--black);
+    }
+
     /* ── MANIFESTO ── */
     .manifesto {
       padding: var(--section-pad) 0;
-      border-bottom: 1px solid var(--gray-line);
+      border-bottom: 1px solid rgba(19,41,242,0.2);
     }
 
     .manifesto-header {
@@ -92,13 +130,13 @@
     .manifesto-quote {
       position: relative;
       padding: 40px 48px;
-      border: 1px solid var(--gray-line);
+      border: 1px solid rgba(19,41,242,0.35);
       font-family: var(--font-serif);
       font-weight: 500;
       font-style: italic;
       font-size: clamp(22px, 3vw, 40px);
       line-height: 1.4;
-      color: var(--white);
+      color: var(--black);
     }
 
     .manifesto-quote::before {
@@ -109,15 +147,14 @@
       font-family: var(--font-serif);
       font-weight: 500;
       font-size: 80px;
-      color: var(--red);
+      color: var(--ur-blue);
       line-height: 1;
     }
 
     /* Statements */
     .statements {
       padding: var(--section-pad) 0;
-      border-bottom: 1px solid var(--gray-line);
-      background: var(--gray);
+      border-bottom: 1px solid rgba(19,41,242,0.2);
     }
 
     .statements-list {
@@ -131,7 +168,7 @@
       grid-template-columns: 80px 1fr;
       gap: 40px;
       padding: 48px 0;
-      border-bottom: 1px solid var(--gray-line);
+      border-bottom: 1px solid rgba(19,41,242,0.15);
       align-items: start;
     }
 
@@ -141,7 +178,7 @@
       font-family: var(--font-display);
       font-weight: 900;
       font-size: 56px;
-      color: var(--red);
+      color: var(--ur-blue);
       line-height: 1;
     }
 
@@ -151,26 +188,27 @@
       font-size: clamp(22px, 3vw, 36px);
       line-height: 1.2;
       margin-bottom: 16px;
+      color: var(--black);
     }
 
     .statement-content p {
       font-size: clamp(14px, 1.2vw, 17px);
       line-height: 1.8;
-      color: rgba(255,255,255,0.65);
+      color: rgba(10,10,10,0.65);
       max-width: 600px;
     }
 
     /* ── VISUAL STORY ── */
     .visual-story {
       padding: var(--section-pad) 0;
-      border-bottom: 1px solid var(--gray-line);
+      border-bottom: 1px solid rgba(19,41,242,0.2);
     }
 
     .vs-blocks {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
-      background: var(--gray-line);
+      background: rgba(19,41,242,0.25);
       margin-top: 60px;
     }
 
@@ -186,7 +224,7 @@
     }
 
     .vs-block-red {
-      background: var(--red);
+      background: var(--ur-blue);
     }
 
     .vs-block-white {
@@ -247,6 +285,9 @@
     .ur-cta {
       padding: var(--section-pad) 0;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: var(--black);
     }
 
     .ur-cta h2 {
@@ -255,10 +296,58 @@
       font-size: clamp(48px, 10vw, 140px);
       line-height: 0.9;
       margin-bottom: 40px;
+      color: var(--black);
     }
+
+    .ur-cta h2 span { color: var(--ur-blue); }
+
+    .ur-cta .t-subheading { color: rgba(10,10,10,0.65); }
+
+    .ur-cta .btn-primary {
+      background: var(--ur-blue);
+      color: var(--ur-yellow);
+    }
+
+    .ur-cta .btn-primary:hover {
+      background: #0d1fbf;
+    }
+
+    .ur-cta .btn-outline {
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    .ur-cta .btn-outline:hover {
+      background: var(--black);
+      color: var(--ur-yellow);
+    }
+
+    .ur-cta-figure {
+      position: absolute;
+      bottom: -20px;
+      right: 6%;
+      width: clamp(110px, 12vw, 180px);
+      z-index: 0;
+    }
+
+    .ur-cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── TICKER ── */
+    .ur-ticker {
+      background: var(--ur-blue);
+      border-top-color: rgba(0,0,0,0.15);
+      border-bottom-color: rgba(0,0,0,0.15);
+    }
+
+    .ur-ticker .ticker-item { color: var(--ur-yellow); }
+    .ur-ticker .ticker-dot { background: rgba(242,234,168,0.6); }
 
     @media (max-width: 768px) {
       .manifesto-header { grid-template-columns: 1fr; gap: 48px; }
       .statement-item { grid-template-columns: 56px 1fr; gap: 24px; }
       .vs-blocks { grid-template-columns: 1fr; }
+      .ur-cta-figure { display: none; }
     }

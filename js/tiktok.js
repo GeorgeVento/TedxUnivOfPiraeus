@@ -1,11 +1,16 @@
 /* =========================================
    TEDxUniversityofPiraeus — TikTok Corner
-   Renders a grid of official TikTok embeds.
+   Renders a grid of TikTok video thumbnails.
+   Each card loads the real (heavy) TikTok embed
+   only when clicked, so the page doesn't open with
+   12 simultaneous TikTok cookie-consent iframes.
 
    To add a new video: paste its numeric video ID below
    (open the TikTok link, the ID is the long number in the
-   URL — https://www.tiktok.com/@.../video/THIS_NUMBER) and
-   give it a short caption. No other changes needed.
+   URL — https://www.tiktok.com/@.../video/THIS_NUMBER),
+   give it a short caption, and drop a poster image at
+   images/tiktok/<id>.jpg (grab it once via TikTok's oEmbed
+   API's "thumbnail_url" field). No other changes needed.
    ========================================= */
 
 const TIKTOK_VIDEOS = [
@@ -25,22 +30,15 @@ const TIKTOK_VIDEOS = [
 
 const TIKTOK_HANDLE = 'tedxuniversityofpiraeus';
 
-function renderTikTokCorner() {
-  const grid = document.getElementById('tiktok-grid');
-  if (!grid) return;
+function loadTikTokEmbed(card) {
+  const id = card.dataset.videoId;
+  const embedHost = card.querySelector('.tiktok-card-embed');
+  embedHost.innerHTML = `
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@${TIKTOK_HANDLE}/video/${id}" data-video-id="${id}" style="max-width: 325px; min-width: 220px;">
+      <section></section>
+    </blockquote>
+  `;
 
-  grid.innerHTML = TIKTOK_VIDEOS.map((v, i) => `
-    <div class="tiktok-card">
-      <div class="tiktok-card-embed">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@${TIKTOK_HANDLE}/video/${v.id}" data-video-id="${v.id}" style="max-width: 325px; min-width: 220px;">
-          <section></section>
-        </blockquote>
-      </div>
-      <div class="tiktok-card-caption">${v.caption}</div>
-    </div>
-  `).join('');
-
-  // (re)inject the official embed script so it picks up the fresh blockquotes
   const existing = document.getElementById('tiktok-embed-script');
   if (existing) existing.remove();
   const script = document.createElement('script');
@@ -48,6 +46,27 @@ function renderTikTokCorner() {
   script.src = 'https://www.tiktok.com/embed.js';
   script.async = true;
   document.body.appendChild(script);
+}
+
+function renderTikTokCorner() {
+  const grid = document.getElementById('tiktok-grid');
+  if (!grid) return;
+
+  grid.innerHTML = TIKTOK_VIDEOS.map((v) => `
+    <div class="tiktok-card" data-video-id="${v.id}">
+      <button type="button" class="tiktok-card-embed tiktok-card-facade" aria-label="Αναπαραγωγή βίντεο TikTok">
+        <img src="images/tiktok/${v.id}.jpg" alt="" loading="lazy">
+        <span class="tiktok-play-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+      <div class="tiktok-card-caption">${v.caption}</div>
+    </div>
+  `).join('');
+
+  grid.querySelectorAll('.tiktok-card-facade').forEach((btn) => {
+    btn.addEventListener('click', () => loadTikTokEmbed(btn.closest('.tiktok-card')), { once: true });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', renderTikTokCorner);

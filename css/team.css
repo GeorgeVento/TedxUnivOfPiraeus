@@ -228,6 +228,7 @@
       font-weight: 500;
       font-size: 17px;
       line-height: 1.25;
+      min-height: 2.5em;
       margin-bottom: 8px;
       position: relative;
       display: inline-block;

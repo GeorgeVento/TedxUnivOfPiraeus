@@ -231,7 +231,8 @@
       min-height: 2.5em;
       margin-bottom: 8px;
       position: relative;
-      display: inline-block;
+      display: block;
+      width: fit-content;
     }
 
     .member-name::after {

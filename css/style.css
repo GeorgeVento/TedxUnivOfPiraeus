@@ -2,7 +2,7 @@
    TEDxUniversityofPiraeus — Design System
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --red: #E62B1E;
@@ -13,9 +13,15 @@
   --gray-light: #888;
   --gray-line: #222;
 
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-serif: 'DM Serif Display', serif;
-  --font-body: 'DM Sans', sans-serif;
+  /* Un-rushed sub-theme */
+  --ur-yellow: #f2eaa8;
+  --ur-yellow-deep: #e2d24f;
+  --ur-blue: #1329f2;
+  --ur-blue-soft: #8aa0f2;
+
+  --font-display: 'Roboto Condensed', sans-serif;
+  --font-serif: 'EB Garamond', serif;
+  --font-body: 'Inter', sans-serif;
 
   --nav-height: 72px;
   --max-width: 1400px;
@@ -42,8 +48,7 @@ html {
 }
 
 .nav-logo-img {
-  padding: 8px;
-  height: 150px;
+  height: 115px;
   width: auto;
   display: block;
 }
@@ -68,6 +73,36 @@ a {
   text-decoration: none;
 }
 
+/* ── UN-RUSHED sub-theme utilities (yellow halftone + blue accent) ── */
+.ur-halftone {
+  background-color: var(--ur-yellow);
+  background-image:
+    url('../images/unrushed/halftone-yellow.png'),
+    radial-gradient(ellipse 90% 70% at 35% 30%, #fdfbe8 0%, var(--ur-yellow) 55%, var(--ur-yellow-deep) 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: 32px 32px, cover;
+}
+
+.ur-blob {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.ur-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
+.ur-wordmark-dot {
+  display: inline-block;
+  width: 0.14em;
+  height: 0.14em;
+  border-radius: 50%;
+  background: var(--ur-blue);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -85,7 +120,8 @@ img {
    ========================================= */
 .t-hero {
   font-family: var(--font-display);
-  font-size: clamp(72px, 14vw, 220px);
+  font-weight: 900;
+  font-size: clamp(60px, 10vw, 200px);
   line-height: 0.88;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -93,6 +129,7 @@ img {
 
 .t-title {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: clamp(40px, 6vw, 100px);
   line-height: 0.9;
   letter-spacing: 0.02em;
@@ -101,12 +138,14 @@ img {
 
 .t-heading {
   font-family: var(--font-serif);
+  font-weight: 500;
   font-size: clamp(28px, 4vw, 56px);
   line-height: 1.1;
 }
 
 .t-subheading {
   font-family: var(--font-serif);
+  font-weight: 500;
   font-style: italic;
   font-size: clamp(20px, 2.5vw, 32px);
   line-height: 1.3;
@@ -171,6 +210,8 @@ img {
   height: var(--nav-height);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   padding: 0 clamp(20px, 5vw, 80px);
   transition: background 0.4s ease, border-color 0.4s ease;
   border-bottom: 1px solid transparent;
@@ -192,6 +233,7 @@ img {
   background: var(--red);
   color: var(--white);
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 18px;
   letter-spacing: 0.05em;
   padding: 4px 10px 2px;
@@ -200,6 +242,7 @@ img {
 
 .nav-logo-x {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 22px;
   color: var(--white);
   letter-spacing: 0.1em;
@@ -317,6 +360,7 @@ img {
 
 .nav-mobile a {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: clamp(48px, 10vw, 80px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -559,6 +603,7 @@ img {
   background: var(--red);
   color: var(--white);
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 28px;
   padding: 6px 12px 4px;
   letter-spacing: 0.05em;
@@ -582,6 +627,7 @@ img {
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: clamp(120px, 20vw, 300px);
   color: rgba(255,255,255,0.03);
   line-height: 1;
@@ -658,6 +704,7 @@ img {
 
 .ticker-item {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;

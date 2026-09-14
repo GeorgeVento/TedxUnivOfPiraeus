@@ -27,8 +27,8 @@ const NAV_HTML = `
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="events.html">Events</a>
-  <a href="unrushed.html">Un-rushed</a>
   <a href="team.html">Team</a>
+  <a href="unrushed.html">Un-rushed</a>
 </div>
 `;
 
@@ -82,7 +82,6 @@ const FOOTER_HTML = `
       <p class="footer-copy">
         This independent TEDx event is operated under license from TED. ALL RIGHTS RESERVED © 2026 TEDxUniversityofPiraeus
       </p>
-      <div class="footer-ted-badge">TED</div>
     </div>
   </div>
 </footer>

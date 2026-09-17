@@ -18,9 +18,12 @@ const NAV_HTML = `
     <li><a href="events.html" class="nav-cta">Get Tickets →</a></li>
   </ul>
 
-  <button class="nav-hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-actions">
+    <a href="events.html" class="nav-cta-compact">Tickets →</a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <div class="nav-mobile">
@@ -29,6 +32,7 @@ const NAV_HTML = `
   <a href="events.html">Events</a>
   <a href="team.html">Team</a>
   <a href="unrushed.html">Un-rushed</a>
+  <a href="events.html" class="nav-mobile-cta">Get Tickets →</a>
 </div>
 `;
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partners — TEDxUniversityofPiraeus 2026</title>
+  <meta name="description" content="The companies and organizations behind TEDxUniversityofPiraeus 2026 — Un-rushed.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sponsors.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ── PAGE HERO ── -->
+<section class="spon-hero">
+  <div class="spon-hero-bg-text">PARTNERS</div>
+  <div class="container">
+    <span class="t-label anim-fade-up">2026 · Un-rushed</span>
+    <h1 class="t-title anim-fade-up anim-delay-2" style="margin-top:24px;">
+      Our<br><span style="color:var(--red);">Partners</span>
+    </h1>
+    <p class="t-subheading spon-hero-lead anim-fade-up anim-delay-3">
+      An un-rushed day takes a lot of people. These are the companies and organizations making it happen.
+    </p>
+
+    <div class="spon-stats anim-fade-up anim-delay-4">
+      <div>
+        <div class="spon-stat-number"><span data-sponsor-count="companies" data-count="0">0</span></div>
+        <div class="spon-stat-label">Partners</div>
+      </div>
+      <div>
+        <div class="spon-stat-number"><span data-sponsor-count="categories" data-count="0">0</span></div>
+        <div class="spon-stat-label">Categories</div>
+      </div>
+      <div>
+        <div class="spon-stat-number">1</div>
+        <div class="spon-stat-label">Unforgettable Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNER WALL (rendered from js/sponsors.js) ── -->
+<div class="spon-list">
+  <div class="container" id="sponsors-root"></div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">TEDxUniversityofPiraeus<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Un-rushed<span class="ticker-dot"></span></span>
+    <span class="ticker-item">An Un-rushed Experience<span class="ticker-dot"></span></span>
+    <span class="ticker-item">2026<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Piraeus, Greece<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Think Slower, Think Deeper<span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/components.js"></script>
+<!-- sponsors.js must run before main.js so the injected tiles get observed -->
+<script src="js/sponsors.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

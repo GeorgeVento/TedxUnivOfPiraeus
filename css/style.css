@@ -772,6 +772,16 @@ body::after {
 /* =========================================
    RESPONSIVE
    ========================================= */
+/* Nav has 6 links + CTA — tighten the gaps before the hamburger kicks in */
+@media (max-width: 1200px) {
+  .nav-links { gap: 26px; }
+}
+
+@media (max-width: 1000px) {
+  .nav-links { gap: 18px; }
+  .nav-cta { padding: 10px 16px 8px !important; }
+}
+
 @media (max-width: 1024px) {
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }

@@ -284,7 +284,7 @@
 
     .member-linkedin:hover { color: var(--white); }
 
-    /* ── JOIN CTA ── 
+    /* ── JOIN CTA ── */
     .join-section {
       padding: var(--section-pad) 0;
       background: var(--gray);
@@ -347,7 +347,7 @@
       color: var(--gray-light);
       margin-top: 8px;
     }
-*/
+
     @media (max-width: 1024px) {
       .members-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
     }

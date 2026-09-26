@@ -1,0 +1,258 @@
+/* =========================================
+   TEDxUniversityofPiraeus — Partners page
+   ========================================= */
+
+/* ── PAGE HERO ───────────────────────────── */
+.spon-hero {
+  padding-top: calc(var(--nav-height) + 100px);
+  padding-bottom: 90px;
+  border-bottom: 1px solid var(--gray-line);
+  position: relative;
+  overflow: hidden;
+}
+
+.spon-hero-bg-text {
+  position: absolute;
+  right: -3%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(120px, 22vw, 340px);
+  color: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.spon-hero .container { position: relative; }
+
+.spon-hero-lead {
+  margin-top: 32px;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Counters */
+.spon-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(32px, 6vw, 80px);
+  margin-top: 56px;
+}
+
+.spon-stat-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1;
+  color: var(--red);
+}
+
+.spon-stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  margin-top: 10px;
+}
+
+/* ── CATEGORY BLOCKS ─────────────────────── */
+.spon-list { padding: var(--section-pad) 0; }
+
+.spon-cat + .spon-cat {
+  margin-top: clamp(56px, 7vw, 96px);
+  padding-top: clamp(56px, 7vw, 96px);
+  border-top: 1px solid var(--gray-line);
+}
+
+.spon-cat-head {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 24px);
+  margin-bottom: 12px;
+}
+
+.spon-cat-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.spon-cat-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 42px);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.spon-cat-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--gray-line);
+  min-width: 16px;
+}
+
+.spon-cat-count {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--gray-light);
+  flex-shrink: 0;
+}
+
+.spon-cat-note {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 560px;
+  margin-bottom: 8px;
+}
+
+/* ── LOGO GRID ───────────────────────────── */
+.spon-row {
+  --tile: 240px;
+  --tile-max: 320px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--tile), var(--tile-max)));
+  justify-content: center;
+  gap: clamp(16px, 2.2vw, 30px);
+  margin-top: 40px;
+}
+
+.spon-cat--large .spon-row { --tile: 300px; --tile-max: 400px; }
+.spon-cat--feature .spon-row { --tile: 340px; --tile-max: 480px; }
+
+.spon-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+}
+
+/* White plate so brand colours read correctly on the dark page */
+.spon-plate {
+  background: #fff;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height:auto would let a tall logo inflate the plate and break
+     the row rhythm — pin it so every plate keeps the same ratio */
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  padding: clamp(18px, 9%, 38px);
+  border: 1px solid transparent;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.spon-plate img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.spon-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 2px;
+}
+
+.spon-name {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.4;
+}
+
+.spon-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--gray-light);
+}
+
+/* Hover only where hovering actually exists */
+@media (hover: hover) {
+  a.spon-tile:hover .spon-plate,
+  .spon-tile:hover .spon-plate {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    border-color: var(--red);
+  }
+
+  a.spon-tile:hover .spon-name { color: var(--white); }
+}
+
+a.spon-tile:focus-visible .spon-plate {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 900px) {
+  .spon-row { --tile: 200px; --tile-max: 300px; }
+  .spon-cat--large .spon-row { --tile: 240px; --tile-max: 340px; }
+  .spon-cat--feature .spon-row { --tile: 280px; --tile-max: 400px; }
+}
+
+@media (max-width: 640px) {
+  .spon-hero { padding-top: calc(var(--nav-height) + 64px); padding-bottom: 64px; }
+
+  .spon-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+  }
+
+  /* Top tiers stay full width so the logo never gets tiny */
+  .spon-cat--large .spon-row,
+  .spon-cat--feature .spon-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .spon-plate { aspect-ratio: 3 / 2; }
+  .spon-cat--large .spon-plate,
+  .spon-cat--feature .spon-plate { aspect-ratio: 2 / 1; }
+
+  /* A lone logo would otherwise sit in column 1 of a 2-column grid */
+  .spon-cat--normal .spon-row--single {
+    grid-template-columns: minmax(0, 62%);
+    justify-content: center;
+  }
+
+  .spon-cat-head { flex-wrap: wrap; gap: 10px 14px; }
+  .spon-cat-rule { display: none; }
+  .spon-cat-title { flex: 1 1 100%; order: 3; }
+  .spon-cat-num { order: 1; }
+  .spon-cat-count { order: 2; }
+  .spon-row { margin-top: 28px; }
+}
+
+@media (max-width: 400px) {
+  .spon-row,
+  .spon-cat--large .spon-row,
+  .spon-cat--feature .spon-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .spon-cat--normal .spon-row--single { grid-template-columns: minmax(0, 1fr); }
+
+  .spon-plate,
+  .spon-cat--large .spon-plate,
+  .spon-cat--feature .spon-plate { aspect-ratio: 5 / 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spon-plate { transition: none; }
+}

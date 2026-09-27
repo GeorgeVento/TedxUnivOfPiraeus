@@ -31,7 +31,7 @@ const SPONSOR_CATEGORIES = [
   },
   {
     id: 'gold',
-    label: 'Gold Partner',
+    label: 'Golden Plus Partner',
     size: 'large',
     items: [
       { name: 'Enerwave', logo: 'enerwave.png' },
@@ -84,12 +84,19 @@ const SPONSOR_CATEGORIES = [
     ],
   },
   {
+    id: 'media-partners',
+    label: 'Media Partners',
+    items: [
+      { name: 'Media Company', logo: 'media-company.png', note: 'Media note' },
+    ],
+  },
+  {
     id: 'giveaways',
     label: 'Giveaways',
     items: [
       { name: 'Athina Luxury Suites', logo: 'athina-suites.png' },
       { name: 'Rizes Gastro Taverna', logo: 'rizes.png' },
-      { name: 'Fit Buddy', logo: 'fit-buddy.png' },
+      { name: 'Fit Buddy', logo: 'fit-buddy.svg' },
     ],
   },
   {
@@ -99,7 +106,7 @@ const SPONSOR_CATEGORIES = [
     items: [
       { name: 'Belino', logo: 'belino.png' },
       { name: 'Dentyne', logo: 'dentyne.png' },
-      { name: 'Fit Buddy', logo: 'fit-buddy.png' },
+      { name: 'Fit Buddy', logo: 'fit-buddy.svg' },
       { name: 'GAEA', logo: 'gaea.png' },
       { name: 'L’Oréal Hellas', logo: 'loreal-hellas.png' },
       { name: 'Polis Hammam', logo: 'polis-hammam.png' },

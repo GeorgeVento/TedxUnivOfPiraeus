@@ -224,7 +224,7 @@
     }
 
     .member-name {
-      font-family: var(--font-serif);
+      font-family: var(--font-display);
       font-weight: 500;
       font-size: 17px;
       line-height: 1.25;
@@ -233,6 +233,9 @@
       position: relative;
       display: block;
       width: fit-content;
+      /* long Greek surnames must never spill out of the card on narrow screens */
+      max-width: 100%;
+      overflow-wrap: anywhere;
     }
 
     .member-name::after {

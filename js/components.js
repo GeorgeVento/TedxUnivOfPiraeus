@@ -12,15 +12,15 @@ const NAV_HTML = `
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="events.html">Events</a></li>
+    <li><a href="agenda.html">Agenda</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="unrushed.html">Un-rushed</a></li>
     <li><a href="sponsors.html">Partners</a></li>
-    <li><a href="events.html" class="nav-cta">Get Tickets →</a></li>
+    <li><a href="unrushed.html#tickets" class="nav-cta">Get Tickets →</a></li>
   </ul>
 
   <div class="nav-actions">
-    <a href="events.html" class="nav-cta-compact">Tickets →</a>
+    <a href="unrushed.html#tickets" class="nav-cta-compact">Tickets →</a>
     <button class="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -30,11 +30,11 @@ const NAV_HTML = `
 <div class="nav-mobile">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="events.html">Events</a>
+  <a href="agenda.html">Agenda</a>
   <a href="team.html">Team</a>
   <a href="unrushed.html">Un-rushed</a>
   <a href="sponsors.html">Partners</a>
-  <a href="events.html" class="nav-mobile-cta">Get Tickets →</a>
+  <a href="unrushed.html#tickets" class="nav-mobile-cta">Get Tickets →</a>
 </div>
 `;
 
@@ -55,8 +55,9 @@ const FOOTER_HTML = `
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About TEDx</a></li>
-          <li><a href="events.html">Events</a></li>
+          <li><a href="agenda.html">Agenda</a></li>
           <li><a href="unrushed.html">Un-rushed</a></li>
+          <li><a href="unrushed.html#lineup">Line-up</a></li>
           <li><a href="team.html">Our Team</a></li>
           <li><a href="sponsors.html">Partners</a></li>
         </ul>

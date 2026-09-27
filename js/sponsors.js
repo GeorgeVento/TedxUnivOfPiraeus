@@ -43,6 +43,7 @@ const SPONSOR_CATEGORIES = [
     size: 'large',
     items: [
       { name: 'Hotel Grande Bretagne & King George', logo: 'grande-bretagne-king-george.png' },
+      { name: 'FINARTiX', logo: 'FINARTiX_Logo_Orange_RGB.png' }
     ],
   },
   {
@@ -109,7 +110,9 @@ const SPONSOR_CATEGORIES = [
       { name: 'Fit Buddy', logo: 'fit-buddy.svg' },
       { name: 'GAEA', logo: 'gaea.png' },
       { name: 'L’Oréal Hellas', logo: 'loreal-hellas.png' },
+      { name: 'NAUGHTY DOGS', logo: 'naughtydogs.png' },
       { name: 'Polis Hammam', logo: 'polis-hammam.png' },
+      { name: '#HungryNot', logo: 'HungryNot.png' },
       { name: 'Septona', logo: 'septona.png' },
       { name: 'Softex', logo: 'softex.png' },
       { name: 'Zeus', logo: 'zeus.png' },
@@ -129,6 +132,7 @@ const SPONSOR_CATEGORIES = [
       { name: 'GAEA', logo: 'gaea.png' },
       { name: 'L’Oréal Hellas', logo: 'loreal-hellas.png' },
       { name: 'Θεοφύλακτος', logo: 'theofylaktos.svg' },
+      { name: 'Ψυχογιός', logo: 'PSICHOGIOS.png' },
     ],
   },
 ];

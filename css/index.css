@@ -279,7 +279,7 @@
     .theme-desc {
       max-width: 600px;
       font-size: clamp(16px, 1.5vw, 20px);
-      color: rgba(10,10,10,0.75);
+      color: var(--ur-blue);
       line-height: 1.7;
     }
 

@@ -3,6 +3,10 @@
    Injects shared navbar + footer
    ========================================= */
 
+/* Ticket sales live on Eventora — one constant so every "Get Tickets"
+   in the nav points at the same place. */
+const TICKETS_URL = 'https://www.eventora.com/el/Events/spanideventStartTimeO1000pmspankypsemouaftose?c=p';
+
 const NAV_HTML = `
 <nav class="navbar" id="navbar">
   <a href="index.html" class="nav-logo">
@@ -16,11 +20,11 @@ const NAV_HTML = `
     <li><a href="team.html">Team</a></li>
     <li><a href="unrushed.html">Un-rushed</a></li>
     <li><a href="sponsors.html">Partners</a></li>
-    <li><a href="unrushed.html#tickets" class="nav-cta">Get Tickets →</a></li>
+    <li><a href="${TICKETS_URL}" class="nav-cta" target="_blank" rel="noopener">Get Tickets →</a></li>
   </ul>
 
   <div class="nav-actions">
-    <a href="unrushed.html#tickets" class="nav-cta-compact">Tickets →</a>
+    <a href="${TICKETS_URL}" class="nav-cta-compact" target="_blank" rel="noopener">Tickets →</a>
     <button class="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -34,7 +38,7 @@ const NAV_HTML = `
   <a href="team.html">Team</a>
   <a href="unrushed.html">Un-rushed</a>
   <a href="sponsors.html">Partners</a>
-  <a href="unrushed.html#tickets" class="nav-mobile-cta">Get Tickets →</a>
+  <a href="${TICKETS_URL}" class="nav-mobile-cta" target="_blank" rel="noopener">Get Tickets →</a>
 </div>
 `;
 

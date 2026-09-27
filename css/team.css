@@ -224,7 +224,7 @@
     }
 
     .member-name {
-      font-family: var(--font-serif);
+      font-family: var(--font-display);
       font-weight: 500;
       font-size: 17px;
       line-height: 1.25;

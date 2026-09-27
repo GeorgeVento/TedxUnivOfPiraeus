@@ -31,7 +31,7 @@ const SPONSOR_CATEGORIES = [
   },
   {
     id: 'gold',
-    label: 'Gold Partner',
+    label: 'Golden Plus Partner',
     size: 'large',
     items: [
       { name: 'Enerwave', logo: 'enerwave.png' },
@@ -81,6 +81,13 @@ const SPONSOR_CATEGORIES = [
       { name: 'ΣΔΕ', logo: 'sde.png', note: 'Σύνδεσμος Διαφημιζομένων Ελλάδος' },
       { name: 'ΣΕΕ', logo: 'see.png', note: 'Συμβούλιο Ελέγχου Επικοινωνίας' },
       { name: 'Stardust Family Care', logo: 'stardust-family-care.png', note: 'Ψυχολογία' },
+    ],
+  },
+  {
+    id: 'media-partners',
+    label: 'Media Partners',
+    items: [
+      { name: 'Media Company', logo: 'media-company.png', note: 'Media note' },
     ],
   },
   {

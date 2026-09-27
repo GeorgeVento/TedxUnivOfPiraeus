@@ -1,6 +1,9 @@
 /* ── UN-RUSHED PALETTE: shared .ur-halftone / .ur-blob utilities live in style.css ── */
 
     /* ── UNRUSHED HERO ── */
+    /* Kept for reference: the first cut ran a grayscale video behind the
+       lockup. The hero is now the plain yellow halftone the artwork was
+       drawn for, so the video layers below are switched off.
     .ur-hero {
       min-height: 100vh;
       min-height: 100svh;
@@ -10,6 +13,7 @@
       padding-bottom: 80px;
       position: relative;
       overflow: hidden;
+      background-color: var(--ur-yellow);
     }
 
     .ur-hero-video {
@@ -28,15 +32,31 @@
       mix-blend-mode: color;
     }
 
-    /* Lighter than before: the brand lockup is blue artwork and needs the
-       yellow duotone behind it, not a heavy black scrim. The gradient still
-       deepens toward the bottom so the white label and intro stay readable. */
     .ur-hero-bg {
       position: absolute;
       inset: 0;
       background:
         radial-gradient(ellipse 100% 80% at 50% 40%, rgba(0,0,0,0.18) 0%, transparent 70%),
         linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.72) 100%);
+    }
+    */
+
+    .ur-hero {
+      min-height: 70vh;
+      min-height: 55vh;
+      display: flex;
+      align-items: flex-end;
+      padding-top: var(--nav-height);
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--ur-yellow);
+    }
+
+    .ur-hero-video,
+    .ur-hero-duotone,
+    .ur-hero-bg {
+      display: none;
     }
 
     .ur-hero-word {
@@ -70,7 +90,7 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
+      color: var(--ur-blue);
       margin-bottom: 24px;
     }
 
@@ -107,11 +127,11 @@
       max-width: 600px;
       font-size: clamp(16px, 1.5vw, 22px);
       line-height: 1.7;
-      color: rgba(255,255,255,0.85);
+      color: var(--ur-blue);
     }
 
     /* Venue and date, right under the intro — the two facts a visitor
-       scans for first, so they get the brand yellow rather than body grey. */
+       scans for first, so they get the brand blue rather than body grey. */
     .ur-hero-when {
       margin-top: 20px;
       font-family: var(--font-body);
@@ -119,7 +139,7 @@
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ur-yellow);
+      color: var(--ur-blue);
       text-shadow: 0 1px 12px rgba(10,10,10,0.55);
     }
 
@@ -393,7 +413,7 @@
     .statement-content p {
       font-size: clamp(14px, 1.2vw, 17px);
       line-height: 1.8;
-      color: rgba(10,10,10,0.65);
+      color: var(--ur-blue);
       max-width: 600px;
     }
 
@@ -672,7 +692,7 @@
     .lineup-intro p {
       font-size: clamp(15px, 1.3vw, 18px);
       line-height: 1.8;
-      color: rgba(10,10,10,0.7);
+      color: var(--ur-blue);
       margin-top: 16px;
       max-width: 560px;
     }

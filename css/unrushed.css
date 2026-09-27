@@ -110,6 +110,44 @@
       color: rgba(255,255,255,0.85);
     }
 
+    /* Venue and date, right under the intro — the two facts a visitor
+       scans for first, so they get the brand yellow rather than body grey. */
+    .ur-hero-when {
+      margin-top: 20px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ur-yellow);
+      text-shadow: 0 1px 12px rgba(10,10,10,0.55);
+    }
+
+    /* The date must never split across lines ("October 17," / "2026"), so the
+       two facts sit in their own spans and stack whole once space runs out. */
+    .ur-hero-when span {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .ur-hero-when span + span::before {
+      content: '·';
+      margin: 0 0.75em;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .ur-hero-when span {
+        display: block;
+      }
+      .ur-hero-when span + span {
+        margin-top: 6px;
+      }
+      .ur-hero-when span + span::before {
+        content: none;
+      }
+    }
+
     /* ── UN-RUSHED PAGE: dark ink on the yellow halftone sections ── */
     .manifesto,
     .statements,

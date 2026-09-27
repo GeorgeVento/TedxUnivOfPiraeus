@@ -3,6 +3,7 @@
     /* ── UNRUSHED HERO ── */
     .ur-hero {
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: flex-end;
       padding-top: var(--nav-height);
@@ -27,12 +28,15 @@
       mix-blend-mode: color;
     }
 
+    /* Lighter than before: the brand lockup is blue artwork and needs the
+       yellow duotone behind it, not a heavy black scrim. The gradient still
+       deepens toward the bottom so the white label and intro stay readable. */
     .ur-hero-bg {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 100% 80% at 50% 50%, rgba(0,0,0,0.35) 0%, transparent 70%),
-        linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.75) 60%);
+        radial-gradient(ellipse 100% 80% at 50% 40%, rgba(0,0,0,0.18) 0%, transparent 70%),
+        linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.72) 100%);
     }
 
     .ur-hero-word {
@@ -79,6 +83,26 @@
       margin-bottom: 48px;
     }
 
+    /* The brand lockup is a wide piece of art — size it by width, not by
+       cap-height like the small section wordmarks. The soft yellow halo lifts
+       the deep-blue strokes off the moving video behind them. */
+    .ur-hero-title .wordmark-img {
+      width: min(100%, 880px);
+      max-width: 100%;
+      max-height: none;
+      height: auto;
+      filter:
+        drop-shadow(0 0 26px rgba(242,234,168,0.55))
+        drop-shadow(0 2px 10px rgba(10,10,10,0.35));
+    }
+
+    .poster-theme .wordmark-img {
+      width: 100%;
+      max-width: 100%;
+      max-height: none;
+      height: auto;
+    }
+
     .ur-hero-intro {
       max-width: 600px;
       font-size: clamp(16px, 1.5vw, 22px);
@@ -115,10 +139,11 @@
 
     .manifesto-header {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 80px;
       align-items: center;
       margin-bottom: 80px;
+      max-width: 900px;
     }
 
     .manifesto-text {
@@ -149,6 +174,142 @@
       font-size: 80px;
       color: var(--ur-blue);
       line-height: 1;
+    }
+
+    /* ── TRAILER ── */
+    .trailer-section {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(19,41,242,0.2);
+    }
+
+    .trailer-card {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center;
+      background: var(--ur-blue);
+      padding: clamp(28px, 4vw, 64px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .trailer-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(242,234,168,0.75);
+    }
+
+    .trailer-label .ur-wordmark-dot { background: var(--ur-yellow); }
+
+    .trailer-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(38px, 5.5vw, 76px);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--ur-yellow);
+      margin: 20px 0 24px;
+    }
+
+    .trailer-text {
+      font-size: clamp(15px, 1.3vw, 18px);
+      line-height: 1.65;
+      color: rgba(242,234,168,0.85);
+      max-width: 46ch;
+    }
+
+    .trailer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 32px;
+      background: var(--ur-yellow);
+      color: var(--ur-blue);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 16px 32px 14px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .trailer-link:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Click-to-play facade — the real YouTube player is injected on click */
+    .trailer-player {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      max-width: 100%;
+      background: var(--black);
+      border: 1px solid rgba(242,234,168,0.35);
+      overflow: hidden;
+    }
+
+    .trailer-player iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .trailer-facade {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font: inherit;
+      overflow: hidden;
+    }
+
+    .trailer-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      filter: saturate(0.85);
+    }
+
+    .trailer-facade:hover img {
+      transform: scale(1.04);
+      filter: saturate(1);
+    }
+
+    .trailer-play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(19,41,242,0.85);
+      border: 1px solid var(--ur-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ur-yellow);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .trailer-play svg { margin-left: 3px; }
+
+    .trailer-facade:hover .trailer-play {
+      background: var(--ur-yellow);
+      color: var(--ur-blue);
+      transform: scale(1.08);
     }
 
     /* Statements */
@@ -281,6 +442,412 @@
     .vs-block-white .vs-block-sub { color: rgba(0,0,0,0.6); }
     .vs-block-red .vs-block-sub { color: rgba(255,255,255,0.8); }
 
+    /* ═══════════════════════════════════════
+       THE EVENT — poster + practical details
+       Dark band between the yellow theme sections.
+       ═══════════════════════════════════════ */
+    .event-banner {
+      padding: var(--section-pad) 0;
+      border-top: 4px solid var(--ur-blue);
+      border-bottom: 1px solid var(--gray-line);
+      background: var(--black);
+      scroll-margin-top: var(--nav-height);
+    }
+
+    .event-poster {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .poster-visual {
+      aspect-ratio: 3/4;
+      border: 1px solid var(--gray-line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--red);
+      z-index: 2;
+    }
+
+    .poster-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: luminosity;
+      opacity: 0.5;
+    }
+
+    .poster-video-scrim {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 100% 80% at 50% 50%, transparent 40%, rgba(19,41,242,0.15) 100%);
+    }
+
+    .poster-bg-word {
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 200px;
+      color: rgba(19,41,242,0.15);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .poster-center {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .poster-theme-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ur-blue);
+      margin-bottom: 16px;
+    }
+
+    .poster-theme {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(42px, 8vw, 96px);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .poster-divider {
+      width: 32px;
+      height: 2px;
+      background: var(--red);
+      margin: 24px auto;
+    }
+
+    .poster-tagline {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(10,10,10,0.65);
+    }
+
+    .poster-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .poster-location {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(10,10,10,0.6);
+    }
+
+    .event-details {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .detail-item {
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .detail-item:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .detail-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .detail-value {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(28px, 4vw, 48px);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .detail-sub {
+      font-size: 14px;
+      color: var(--gray-light);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .detail-link {
+      color: var(--red);
+      white-space: nowrap;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .detail-link:hover { border-bottom-color: var(--red); }
+
+    /* ═══════════════════════════════════════
+       LINE-UP — hosts / backstage hosts / speakers / performances
+       ═══════════════════════════════════════ */
+    /* The line-up runs on the yellow halftone: it's the background the
+       hand-lettered wordmarks were drawn for, so the blue reads at full
+       strength instead of going muddy on black. */
+    .lineup-section {
+      padding: var(--section-pad) 0;
+      color: var(--black);
+      border-bottom: 1px solid rgba(19,41,242,0.2);
+      scroll-margin-top: var(--nav-height);
+    }
+
+    .lineup-section .t-label { color: var(--ur-blue); }
+    .lineup-section .t-heading { color: var(--black); }
+    .lineup-section .t-heading span { color: var(--ur-blue) !important; }
+
+    .lineup-intro p {
+      font-size: clamp(15px, 1.3vw, 18px);
+      line-height: 1.8;
+      color: rgba(10,10,10,0.7);
+      margin-top: 16px;
+      max-width: 560px;
+    }
+
+    .lineup-group {
+      margin-top: 72px;
+    }
+
+    .lineup-group-header {
+      display: flex;
+      /* flex-end, not baseline: the wordmark artwork is taller than the text
+         and a baseline row would push its top out of the header box */
+      align-items: flex-end;
+      gap: 20px;
+      margin-bottom: 36px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(19,41,242,0.25);
+      position: relative;
+    }
+
+    .lineup-group-header::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 56px;
+      height: 2px;
+      background: var(--ur-blue);
+    }
+
+    .lineup-group-number {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 56px;
+      color: var(--ur-blue);
+      line-height: 1;
+      opacity: 0.9;
+    }
+
+    /* Holds either the hand-lettered wordmark or, if it's missing, plain text */
+    .lineup-group-name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(22px, 2.4vw, 30px);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      /* leave room for the longest wordmark, but never push the count off-row */
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .lineup-group-name .wordmark-img {
+      max-height: clamp(30px, 4.4vw, 54px);
+    }
+
+    .lineup-group-count {
+      margin-left: auto;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(10,10,10,0.5);
+      white-space: nowrap;
+    }
+
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .lineup-group-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(10,10,10,0.6);
+    }
+
+    .lineup-group-note a {
+      color: var(--ur-blue);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .lineup-group-note a:hover { border-bottom-color: var(--ur-blue); }
+
+    .lineup-card {
+      position: relative;
+      background: var(--white);
+      border: 1px solid rgba(19,41,242,0.25);
+      overflow: hidden;
+      transition: border-color 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .lineup-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--ur-blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 4;
+    }
+
+    .lineup-card:hover {
+      border-color: var(--ur-blue);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 40px -18px rgba(19,41,242,0.35), 0 18px 40px -24px rgba(10,10,10,0.45);
+    }
+
+    .lineup-card:hover::before { transform: scaleX(1); }
+
+    .lineup-photo {
+      aspect-ratio: 3/4;
+      background: rgba(19,41,242,0.07);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(19,41,242,0.45);
+      transition: color 0.3s ease;
+    }
+
+    /* The portraits are cut-outs with brand graphics around them, so they must
+       never be cropped — contain, bottom-aligned so everyone stands on the
+       same line however tall their original crop was. No grayscale either:
+       the blue marks are part of the artwork. */
+    .lineup-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+      position: relative;
+      z-index: 1;
+      transform: scale(1);
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lineup-card:hover .lineup-photo img {
+      transform: scale(1.04);
+    }
+
+    .lineup-info {
+      padding: 18px 20px 22px;
+      border-top: 1px solid rgba(19,41,242,0.18);
+      transition: border-color 0.35s ease;
+    }
+
+    .lineup-card:hover .lineup-info { border-color: var(--ur-blue); }
+
+    .lineup-name {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 1.25;
+      min-height: 2.5em;
+      margin-bottom: 8px;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      color: var(--black);
+    }
+
+    /* Names supplied as hand-lettered artwork fill the card width */
+    .lineup-name.wordmark {
+      min-height: 0;
+      margin-bottom: 0;
+    }
+
+    .lineup-name .wordmark-img {
+      width: 100%;
+      max-width: 100%;
+      max-height: none;
+      height: auto;
+    }
+
+    .lineup-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ur-blue);
+    }
+
+    /* the shared pulsing dot is red by default — recolour it for this section */
+    .lineup-role .soon-dot {
+      background: var(--ur-blue);
+      animation: soonPulseBlue 2s ease-in-out infinite;
+    }
+
+    @keyframes soonPulseBlue {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(19,41,242,0.3); }
+      50% { box-shadow: 0 0 0 8px rgba(19,41,242,0); }
+    }
+
+    /* Unannounced slots: shimmering placeholder instead of a photo */
+    .lineup-card.is-soon .lineup-photo {
+      background: linear-gradient(100deg, rgba(19,41,242,0.05) 30%, rgba(19,41,242,0.14) 50%, rgba(19,41,242,0.05) 70%);
+      background-size: 250% 100%;
+      animation: soonShimmer 3.5s ease-in-out infinite;
+    }
+
+    .lineup-card.is-soon:hover .lineup-photo { color: var(--ur-blue); }
+
+    .lineup-card.is-soon .lineup-name { color: rgba(10,10,10,0.45); }
+    .lineup-card.is-soon .lineup-role { color: rgba(10,10,10,0.5); }
+
     /* ── CTA ── */
     .ur-cta {
       padding: var(--section-pad) 0;
@@ -322,6 +889,34 @@
       color: var(--ur-yellow);
     }
 
+    /* The ticket artwork is a long lockup — give it its own row so the
+       secondary link reads as secondary instead of looking undersized. */
+    .ur-cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* "Get Tickets" supplied as artwork — falls back to a normal button */
+    .btn-wordmark {
+      display: inline-block;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .btn-wordmark .wordmark-img {
+      max-height: clamp(30px, 4.6vw, 58px);
+    }
+
+    .btn-wordmark:hover { transform: translateY(-2px); }
+    .btn-wordmark:hover .wordmark-img { opacity: 0.85; }
+
+    /* when the artwork is missing the hidden span becomes a real button again */
+    .btn-wordmark.is-fallback .wordmark-text {
+      display: inline-flex;
+    }
+
     .ur-cta-figure {
       position: absolute;
       bottom: -20px;
@@ -345,9 +940,59 @@
     .ur-ticker .ticker-item { color: var(--ur-yellow); }
     .ur-ticker .ticker-dot { background: rgba(242,234,168,0.6); }
 
+    @media (max-width: 1024px) {
+      .lineup-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .event-poster { gap: 48px; }
+    }
+
     @media (max-width: 768px) {
       .manifesto-header { grid-template-columns: 1fr; gap: 48px; }
-      .statement-item { grid-template-columns: 56px 1fr; gap: 24px; }
+      .statement-item { grid-template-columns: 64px 1fr; gap: 24px; }
+      .statement-num { font-size: 46px; }
       .vs-blocks { grid-template-columns: 1fr; }
       .ur-cta-figure { display: none; }
+
+      /* Trailer: lead with the video, copy underneath */
+      .trailer-card { grid-template-columns: 1fr; gap: 28px; }
+      .trailer-player { order: -1; }
+      .trailer-link { width: 100%; justify-content: center; }
+
+      .event-poster { grid-template-columns: 1fr; }
+      .lineup-group { margin-top: 56px; }
+      .lineup-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .lineup-group-header { flex-wrap: wrap; row-gap: 8px; }
+      .lineup-group-count { margin-left: 0; width: 100%; }
+    }
+
+    /* Two cards per row on phones leaves ~130px of card width: the lettering
+       artwork would shrink to an illegible 13px strip, so show the real text
+       instead. The artwork returns as soon as there is room for it. */
+    @media (max-width: 600px) {
+      /* the longest wordmark would otherwise butt against both gutters */
+      .lineup-group-name .wordmark-img { max-height: 26px; }
+
+      .lineup-name .wordmark-img { display: none; }
+      .lineup-name .wordmark-text {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+      .lineup-name.wordmark {
+        line-height: 1.25;
+        min-height: 2.5em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .lineup-grid { gap: 12px; }
+      .lineup-name { font-size: 15px; }
+      /* keep "Announcing Soon" on one line inside the narrow card */
+      .lineup-role { font-size: 9.5px; letter-spacing: 0.08em; gap: 6px; }
+      .lineup-group-number { font-size: 42px; }
+      .poster-visual { padding: 28px; }
     }

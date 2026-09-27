@@ -97,9 +97,8 @@
     }
 
     .hero-tagline {
-      font-family: var(--font-serif);
+      font-family: var(--font-display);
       font-weight: 500;
-      font-style: italic;
       font-size: clamp(16px, 2vw, 24px);
       color: rgba(255,255,255,0.7);
       max-width: 400px;
@@ -269,6 +268,14 @@
       margin-bottom: 48px;
     }
 
+    /* Brand lockup artwork — sized by width, unlike the small section wordmarks */
+    .theme-title .wordmark-img {
+      width: min(100%, 820px);
+      max-width: 100%;
+      max-height: none;
+      height: auto;
+    }
+
     .theme-desc {
       max-width: 600px;
       font-size: clamp(16px, 1.5vw, 20px);
@@ -314,6 +321,16 @@
       margin-bottom: 60px;
       gap: 40px;
       flex-wrap: wrap;
+    }
+
+    /* Section title for the preview header — display face, one step up from .t-heading */
+    .t-title-preview {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(32px, 4.5vw, 64px);
+      line-height: 1;
+      letter-spacing: 0.01em;
+      text-wrap: balance;
     }
 
     .preview-cards {
@@ -611,7 +628,14 @@
 
     @media (max-width: 600px) {
       .hero { padding-bottom: 56px; }
-      .hero .t-hero { font-size: clamp(34px, 11vw, 60px); }
+      /* Biggest the title can run on a phone before "CONSERVATOIRE" — the
+         longest unbreakable word — spills out of frame. The condensed width
+         axis + tighter tracking buy the extra ~8%; measured, not guessed. */
+      .hero .t-hero {
+        font-size: clamp(34px, 11.3vw, 64px);
+        font-stretch: 75%;
+        letter-spacing: -0.04em;
+      }
       .hero-bottom { margin-top: 28px; }
       .hero-tagline { max-width: none; }
       .tiktok-grid { grid-template-columns: 1fr 1fr; gap: 12px; }

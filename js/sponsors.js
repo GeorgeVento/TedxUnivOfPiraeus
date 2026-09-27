@@ -89,7 +89,7 @@ const SPONSOR_CATEGORIES = [
     items: [
       { name: 'Athina Luxury Suites', logo: 'athina-suites.png' },
       { name: 'Rizes Gastro Taverna', logo: 'rizes.png' },
-      { name: 'Fit Buddy', logo: 'fit-buddy.png' },
+      { name: 'Fit Buddy', logo: 'fit-buddy.svg' },
     ],
   },
   {
@@ -99,7 +99,7 @@ const SPONSOR_CATEGORIES = [
     items: [
       { name: 'Belino', logo: 'belino.png' },
       { name: 'Dentyne', logo: 'dentyne.png' },
-      { name: 'Fit Buddy', logo: 'fit-buddy.png' },
+      { name: 'Fit Buddy', logo: 'fit-buddy.svg' },
       { name: 'GAEA', logo: 'gaea.png' },
       { name: 'L’Oréal Hellas', logo: 'loreal-hellas.png' },
       { name: 'Polis Hammam', logo: 'polis-hammam.png' },

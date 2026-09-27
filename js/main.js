@@ -130,4 +130,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   counters.forEach(c => counterObserver.observe(c));
 
+  // ─── Wordmark artwork fallback ───────────
+  // If a hand-lettered section title hasn't been dropped in yet (or fails to
+  // load), show the plain text heading instead of a broken image.
+  document.querySelectorAll('.wordmark-img').forEach(img => {
+    const markFallback = () => img.closest('.wordmark')?.classList.add('is-fallback');
+    img.addEventListener('error', markFallback);
+    // covers images that already failed before this script ran
+    if (img.complete && img.naturalWidth === 0) markFallback();
+  });
+
+  // ─── Missing line-up portrait ────────────
+  // Someone can be listed in js/lineup.js before their photo is ready — the
+  // card falls back to the "Announcing Soon" placeholder instead of showing
+  // a broken image.
+  document.querySelectorAll('.lineup-photo img').forEach(img => {
+    const toPlaceholder = () => {
+      const card = img.closest('.lineup-card');
+      const box = img.closest('.lineup-photo');
+      if (!card || !box) return;
+      card.classList.add('is-soon');
+      box.innerHTML = '<svg width="34" height="34"><use href="#icon-user"></use></svg>';
+    };
+    img.addEventListener('error', toPlaceholder);
+    if (img.complete && img.naturalWidth === 0) toPlaceholder();
+  });
+
 });

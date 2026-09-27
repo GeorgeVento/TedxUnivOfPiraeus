@@ -4,10 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Un-rushed — TEDxUniversityofPiraeus 2026</title>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/unrushed.css">
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <symbol id="icon-sparkle" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2c.6 3.6 2 6.3 4.7 8.3 2.7 1.9 5.3 2.7 7.3 2.7-2 0-4.6.8-7.3 2.7-2.7 2-4.1 4.7-4.7 8.3-.6-3.6-2-6.3-4.7-8.3C4.6 13.8 2 13 0 13c2 0 4.6-.8 7.3-2.7C10 8.3 11.4 5.6 12 2z"/>
+  </symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="4"></circle>
+    <path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path>
+  </symbol>
+</svg>
 
 <div id="nav-placeholder"></div>
 
@@ -18,13 +30,13 @@
   </video>
   <div class="ur-hero-duotone"></div>
   <div class="ur-hero-bg"></div>
-  <div class="ur-hero-word">UN·RUSHED</div>
-  <img src="images/unrushed/blob-cluster.svg" alt="" class="ur-blob" style="top:14%;left:6%;width:clamp(80px,10vw,160px);">
-  <img src="images/unrushed/blob-cluster.svg" alt="" class="ur-blob" style="bottom:18%;right:5%;width:clamp(70px,9vw,140px);transform:rotate(35deg);">
 
   <div class="container ur-hero-content">
     <div class="ur-hero-label anim-fade-up">TEDxUniversityofPiraeus · 2026 Theme</div>
-    <div class="ur-hero-title anim-fade-up anim-delay-2">Un-<br>rushed</div>
+    <h1 class="ur-hero-title wordmark anim-fade-up anim-delay-2">
+      <img class="wordmark-img" src="images/wordmarks/unrushed.png" alt="Un-rushed">
+      <span class="wordmark-text">Un-<br>rushed</span>
+    </h1>
     <p class="ur-hero-intro anim-fade-up anim-delay-3">
       The theme that defines our 2026 event. A radical act of resistance in an age of infinite speed.
     </p>
@@ -33,17 +45,11 @@
 
 <!-- ── MANIFESTO ── -->
 <section class="manifesto ur-halftone section">
-  <img src="images/unrushed/blob-cluster.svg" alt="" class="ur-blob" style="top:6%;right:4%;width:clamp(70px,8vw,120px);transform:rotate(-20deg);">
   <div class="container">
     <div class="manifesto-header">
       <div class="reveal">
         <span class="t-label">The Manifesto</span>
         <h2 class="t-heading" style="margin-top:16px;">What Does It Mean To Be <span style="color:var(--ur-blue);">Un-rushed</span>?</h2>
-      </div>
-      <div class="reveal">
-        <div class="manifesto-quote">
-          In a world built for speed, choosing slowness is a radical act. Un-rushed is not about being slow — it's about being deliberate.
-        </div>
       </div>
     </div>
 
@@ -61,9 +67,38 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════
+     TRAILER
+═══════════════════════════════════════ -->
+<section class="trailer-section ur-halftone section" id="trailer">
+  <div class="container">
+    <div class="trailer-card reveal">
+      <div class="trailer-copy">
+        <span class="trailer-label ur-wordmark">UN<span class="ur-wordmark-dot"></span>RUSHED</span>
+        <h2 class="trailer-title">The trailer<br>is here</h2>
+        <p class="trailer-text">
+          What if, this time, we didn't have to rush?<br>
+          Maybe then we'd notice everything we have blindly walked past.<br><br>
+          Because it doesn't always matter how far you get — but how truly you move, and how much of the way you actually enjoy.<br><br>
+          Let time catch up with you, for once.
+        </p>
+        <a href="https://www.youtube.com/watch?v=fdyRlwINinQ" class="trailer-link" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+
+      <div class="trailer-player" id="trailer-player">
+        <button type="button" class="trailer-facade" aria-label="Play the Un-rushed trailer">
+          <img src="images/unrushed/trailer-poster.jpg" alt="TEDxUniversityofPiraeus 2026 — Un-rushed trailer" loading="lazy" width="1280" height="720">
+          <span class="trailer-play" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── STATEMENTS ── -->
 <section class="statements ur-halftone section">
-  <img src="images/unrushed/sitting-figure.svg" alt="" class="ur-blob" style="bottom:4%;left:3%;width:clamp(90px,10vw,150px);">
   <div class="container">
     <div class="reveal">
       <span class="t-label">Core Ideas</span>
@@ -106,10 +141,104 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════
+     THE EVENT — poster + practical details
+═══════════════════════════════════════ -->
+<section class="event-banner section" id="tickets">
+  <div class="container">
+    <div class="event-poster">
+      <!-- Poster visual -->
+      <div class="poster-visual ur-halftone reveal">
+        <video class="poster-video" autoplay muted loop playsinline poster="images/unrushed/hero-poster.jpg">
+          <source src="videos/unrushed.mp4" type="video/mp4">
+        </video>
+        <div class="poster-video-scrim"></div>
+        <div class="poster-bg-word">UN-<br>RUSHED</div>
+
+        <div class="poster-center">
+          <div class="poster-theme-label">Theme</div>
+          <div class="poster-theme wordmark">
+            <img class="wordmark-img" src="images/wordmarks/unrushed.png" alt="Un-rushed">
+            <span class="wordmark-text">Un-<br>rushed</span>
+          </div>
+          <div class="poster-divider"></div>
+          <div class="poster-tagline">Slow down. Think deeper.</div>
+        </div>
+
+        <div class="poster-bottom">
+          <div class="poster-location">University of Piraeus<br>Piraeus, Greece</div>
+        </div>
+      </div>
+
+      <!-- Event details -->
+      <div class="event-details reveal">
+        <div class="detail-item">
+          <div class="detail-label">Date</div>
+          <div class="soon-reveal">
+            <div class="soon-badge"><svg width="20" height="20"><use href="#icon-sparkle"></use></svg></div>
+            <div>
+              <div class="detail-value">Coming Soon</div>
+              <div class="detail-sub">The exact date is being finalized. Register your interest and be the first to know the moment it drops.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Location</div>
+          <div class="soon-reveal">
+            <div class="soon-badge"><svg width="20" height="20"><use href="#icon-sparkle"></use></svg></div>
+            <div>
+              <div class="detail-value">Coming Soon</div>
+              <div class="detail-sub">The exact venue is being finalized. Register your interest and be the first to know.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Format</div>
+          <div class="detail-value">Full-Day Event</div>
+          <div class="detail-sub">Morning to evening — talks, performances, workshops, networking, and more. <a href="agenda.html" class="detail-link">See the agenda →</a></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Tickets</div>
+          <div class="soon-reveal">
+            <div class="soon-badge"><svg width="20" height="20"><use href="#icon-sparkle"></use></svg></div>
+            <div>
+              <div class="detail-value">Coming Soon</div>
+              <div class="detail-sub">Pricing &amp; registration details will be announced soon. Limited seats available.</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-primary btn-arrow" style="align-self:flex-start;">
+          Register Interest
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     LINE-UP — hosts, backstage hosts, speakers, performances
+
+     ΤΑ ΑΤΟΜΑ ΟΡΙΖΟΝΤΑΙ ΣΤΟ js/lineup.js — μία γραμμή το καθένα.
+     Μην γράφεις κάρτες εδώ: παράγονται αυτόματα από εκείνη τη λίστα.
+═══════════════════════════════════════ -->
+<section class="lineup-section ur-halftone section" id="lineup">
+  <div class="container">
+    <div class="lineup-intro reveal">
+      <span class="t-label">The line-up</span>
+      <h2 class="t-heading" style="margin-top:12px;">Who You'll <span style="color:var(--red);">Meet</span></h2>
+      <p>Speakers, hosts and performers are being confirmed one by one. Every slot below fills in as we announce it — check back, or follow along on Instagram.</p>
+    </div>
+
+    <div id="lineup-groups"></div>
+  </div>
+</section>
+
 <!-- ── CTA ── -->
 <section class="ur-cta ur-halftone section">
-  <img src="images/unrushed/blob-cluster.svg" alt="" class="ur-blob" style="top:8%;left:4%;width:clamp(70px,8vw,130px);">
-  <img src="images/unrushed/sitting-figure.svg" alt="" class="ur-cta-figure">
   <div class="container ur-cta-content">
     <div class="reveal">
       <span class="t-label ur-wordmark" style="justify-content:center;color:var(--ur-blue);">UN<span class="ur-wordmark-dot"></span>RUSHED</span>
@@ -117,9 +246,12 @@
       <p class="t-subheading" style="max-width:500px;margin:0 auto 40px;">
         Join us for a day of ideas that ask you to slow down, look closer, and think deeper.
       </p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="events.html" class="btn btn-primary btn-arrow">Get Tickets</a>
-        <a href="about.html" class="btn btn-outline btn-arrow">Learn More</a>
+      <div class="ur-cta-actions">
+        <a href="#tickets" class="btn-wordmark wordmark">
+          <img class="wordmark-img" src="images/wordmarks/get-tickets.png" alt="Get Tickets">
+          <span class="wordmark-text btn btn-primary btn-arrow">Get Tickets</span>
+        </a>
+        <a href="agenda.html" class="btn btn-outline btn-arrow">See the Agenda</a>
       </div>
     </div>
   </div>
@@ -139,6 +271,8 @@
 <div id="footer-placeholder"></div>
 
 <script src="js/components.js"></script>
+<script src="js/lineup.js"></script>
 <script src="js/main.js"></script>
+<script src="js/unrushed.js"></script>
 </body>
 </html>

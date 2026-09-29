@@ -61,9 +61,9 @@ const WORKSHOPS = [
    Αν είναι περισσότερα, μπαίνουν όλα. slots: 0 = δείξε μόνο όσους υπάρχουν.
    Ομάδα χωρίς καμία κάρτα κρύβεται εντελώς. */
 const LINEUP_GROUPS = [
-  { key: 'hosts',          art: 'host',            label: 'Hosts',           one: 'Host',        many: 'Hosts',        slots: 2 },
+  { key: 'hosts',          art: 'host',            label: 'Host',            one: 'Host',        many: 'Hosts',        slots: 1 },
   { key: 'backstageHosts', art: 'backstage-hosts', label: 'Backstage Hosts', one: 'Host',        many: 'Hosts',        slots: 2 },
-  { key: 'speakers',       art: 'speakers',        label: 'Speakers',        one: 'Speaker',     many: 'Speakers',     slots: 0 },
+  { key: 'speakers',       art: 'speakers',        label: 'Speakers',        one: 'Speaker',     many: 'Speakers',     slots: 9 },
   { key: 'performances',   art: 'performance',     label: 'Performances',    one: 'Performance', many: 'Performances', slots: 3 },
   { key: 'workshopHosts',  art: 'workshops',       label: 'Workshops',       one: 'Workshop',    many: 'Workshops',    slots: 4 },
 ];

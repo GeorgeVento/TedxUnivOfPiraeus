@@ -5,7 +5,7 @@
 
 /* Ticket sales live on Eventora — one constant so every "Get Tickets"
    in the nav points at the same place. */
-const TICKETS_URL = 'https://www.eventora.com/el/Events/spanideventStartTimeO1000pmspankypsemouaftose?c=p';
+const TICKETS_URL = 'https://www.eventora.com/el/Events/tedxuniversityofpiraeus-unrushed';
 
 const NAV_HTML = `
 <nav class="navbar" id="navbar">

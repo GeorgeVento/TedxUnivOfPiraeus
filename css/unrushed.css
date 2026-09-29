@@ -1022,28 +1022,9 @@
       .lineup-group-count { margin-left: 0; width: 100%; }
     }
 
-    /* Two cards per row on phones leaves ~130px of card width: the lettering
-       artwork would shrink to an illegible 13px strip, so show the real text
-       instead. The artwork returns as soon as there is room for it. */
     @media (max-width: 600px) {
       /* the longest wordmark would otherwise butt against both gutters */
       .lineup-group-name .wordmark-img { max-height: 26px; }
-
-      .lineup-name .wordmark-img { display: none; }
-      .lineup-name .wordmark-text {
-        position: static;
-        width: auto;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-      }
-      .lineup-name.wordmark {
-        line-height: 1.25;
-        min-height: 2.5em;
-      }
     }
 
     @media (max-width: 480px) {

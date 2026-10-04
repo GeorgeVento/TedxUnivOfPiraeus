@@ -35,10 +35,12 @@ const LINEUP = {
     { slug: 'lazaros-thomas',          name: 'Λάζαρος Θωμάς' },
     { slug: 'erato-tsairi',            name: 'Ερατώ Τσαΐρη' },
     { slug: 'charis-tremetousiotis',   name: 'Χάρης Τρεμετουσιώτης' },
+    { slug: 'katerina-vrana',          name: 'Κατερίνα Βρανά' },
   ],
 
   performances: [
     { slug: 'marilena-anastasiadou', name: 'Μαριλένα Αναστασιάδου' },
+    { slug: 'lah-porella',           name: 'Lah Porella' },
   ],
 
   workshopHosts: [

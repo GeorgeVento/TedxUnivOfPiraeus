@@ -61,12 +61,27 @@ const SPONSOR_CATEGORIES = [
     ],
   },
   {
+    id: 'metaptixiaka',
+    label: 'Μεταπτυχιακά',
+    items: [
+      { name: 'ΠΜΣ', logo: 'pms.png' },
+    ],
+  },
+  {
+    id: 'medisar',
+    label: 'Medisar',
+    items: [
+      { name: 'Medisar', logo: 'medisar.jpg' },
+    ],
+  },
+  {
     id: 'activities',
     label: 'Experience · Activities',
     note: 'The people making the breaks as good as the talks.',
     items: [
       { name: 'IOAS', logo: 'ioas.jpg', note: 'Table football' },
       { name: 'L’Oréal Hellas', logo: 'loreal-hellas.png', note: 'Makeup' },
+      { name: 'Museum of Illusions', logo: 'museum-of-illusions.png', note: 'Museum of Illusions' },
       { name: 'Photoboothyes', logo: 'photoboothyes.png', note: 'Photobooth' },
       { name: 'Printy', logo: 'printy.jpg', note: 'Printing services' },
       { name: 'Sivissidis', logo: 'sivissidis.png', note: 'Table football' },
@@ -87,6 +102,16 @@ const SPONSOR_CATEGORIES = [
       { name: 'Πειραϊκή Φυταγορά', logo: 'peiraiki-fytagora.png', note: 'Paint & Plant' },
       { name: 'Samba Coffee Roasters', logo: 'samba.png', note: 'Coffee' },
       { name: 'Tales of Ales', logo: 'tales-of-ales.jpg', note: 'Beer tasting' },
+      { name: 'Eksi Okto', logo: 'eksi-okto.png', note: 'Candles and more' },
+    ],
+  },
+  {
+    id: 'food',
+    label: 'Food & Drinks',
+    items: [
+      { name: 'Coca-Cola', logo: 'cchbc.png', note: 'Beverage' },
+      { name: 'Everest', logo: 'everest.png', note: 'Everest' },
+      { name: 'Samba Coffee Roasters', logo: 'samba.png', note: 'Coffee' },
     ],
   },
   {
@@ -94,6 +119,8 @@ const SPONSOR_CATEGORIES = [
     label: 'Media Partners',
     items: [
       { name: 'MAD', logo: 'mad.png', note: 'MAD TV' },
+      { name: 'AIESEC', logo: 'aiesec.png', note: 'AIESEC' },
+      { name: 'TOPAPEIRAZEI', logo: 'topapeirazei.jpg', note: 'TOPAPEIRAZEI' },
     ],
   },
   {
@@ -102,7 +129,9 @@ const SPONSOR_CATEGORIES = [
     items: [
       { name: 'Athina Luxury Suites', logo: 'athina-suites.png' },
       { name: 'Rizes Gastro Taverna', logo: 'rizes.png' },
+      { name: 'Ella Resorts', logo: 'ella-resorts.png' },
       { name: 'Fit Buddy', logo: 'fit-buddy.svg' },
+      { name: 'Zeus', logo: 'zeus.png' },
     ],
   },
   {
@@ -110,9 +139,12 @@ const SPONSOR_CATEGORIES = [
     label: 'In-Kind Partners',
     note: 'Products and services that keep the day running.',
     items: [
+      { name: 'Coca-Cola', logo: 'cchbc.png' },
+      { name: 'Ψυχογιός', logo: 'psychogios.png' },
       { name: 'Belino', logo: 'belino.png' },
       { name: 'Dentyne', logo: 'dentyne.png' },
       { name: 'ECO BEE', logo: 'eco-bee.png' },
+      { name: 'Enerwave', logo: 'enerwave.png' },
       { name: 'Fit Buddy', logo: 'fit-buddy.svg' },
       { name: 'GAEA', logo: 'gaea.png' },
       { name: 'Green Elephant', logo: 'green-elephant.png' },
@@ -148,6 +180,7 @@ const SPONSOR_CATEGORIES = [
       { name: 'Θεοφύλακτος', logo: 'theofylaktos.svg' },
       { name: 'Ψυχογιός', logo: 'psychogios.png' },
       { name: 'ECO BEE', logo: 'eco-bee.png' },
+      { name: 'GAEA', logo: 'gaea.png' },
       { name: 'Green Elephant', logo: 'green-elephant.png' },
       { name: 'L’Oréal Hellas', logo: 'loreal-hellas.png' },
       { name: '#HungryNot', logo: 'hungry-not.png' },
